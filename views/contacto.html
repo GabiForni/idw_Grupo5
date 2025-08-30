@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/index.css"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="icon" href="">    
+    <title>Centro Médico</title>
+</head>
+<body>
+    <form name="turno">
+        <div>
+            <label for="ua">Unidad en la que desea atenderse: </label>
+        </div>
+        <div>
+            <select id="ua">
+                <option label="--Seleccione--" selected="selected"></option>
+                <option label="Clinica Pediátrica" value="1">Pediatría</option>
+                <option label="Clínica Oftalmológica" value="2">Oftalmología</option>
+                <option label="Clínica Cardiológica" value="3">Traumatología</option>
+                <option label="Clínica Cardiológica" value="4">Cardiología</option>
+            </select>
+        </div>
+        <div class="form_group">
+            <div>Ingrese sus datos por favor: </div>
+            <select>
+                <option label="DNI" value="5"></option>
+                <option label="LE" value="6"></option>
+                <option label="LC" value="7"></option>
+            </select>
+            <input type="text" id="dni" placeholder="--Ingrese--" required>
+            <div>
+                Fecha de nacimiento: 
+                <input type="date" id="8" placeholder="Fecha de nacimiento" required>
+            </div>
+        </div>
+        <button type="submit">Reservar Turno</button>
+        <button type="submit">Buscar / Borrar Turnos</button>
+    </form>
+</body>
+</html>
