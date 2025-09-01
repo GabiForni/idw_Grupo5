@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/index.css"> 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="icon" type="image/png" href="./img/favicon.png">
+    <link rel="stylesheet" href="../styles/index.css"> 
+    <link rel="stylesheet" href="../styles/internas.css"> 
+    <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
@@ -14,37 +17,104 @@
         href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
     <link rel="icon" href="">    
-    <title>Centro Médico</title>
+    <title>Contacto</title>
 </head>
 <body>
-    <form name="turno">
-        <div>
-            <label for="ua">Unidad en la que desea atenderse: </label>
-        </div>
-        <div>
-            <select id="ua">
-                <option label="--Seleccione--" selected="selected"></option>
-                <option label="Clinica Pediátrica" value="1">Pediatría</option>
-                <option label="Clínica Oftalmológica" value="2">Oftalmología</option>
-                <option label="Clínica Cardiológica" value="3">Traumatología</option>
-                <option label="Clínica Cardiológica" value="4">Cardiología</option>
-            </select>
-        </div>
-        <div class="form_group">
-            <div>Ingrese sus datos por favor: </div>
-            <select>
-                <option label="DNI" value="5"></option>
-                <option label="LE" value="6"></option>
-                <option label="LC" value="7"></option>
-            </select>
-            <input type="text" id="dni" placeholder="--Ingrese--" required>
-            <div>
-                Fecha de nacimiento: 
-                <input type="date" id="8" placeholder="Fecha de nacimiento" required>
+    <header class="main-header">
+            <div class="main-content-wrapper content-contacto">
+                <div class="header-container">
+                    <a href="../index.html" class="logo">
+                        <img src="../img/logo-idw.png" alt="IDW Logo">
+                    </a>
+                    
+                    <nav class="menu-nav">
+                        <ul>
+                            <li><a href="../index.html">Inicio</a></li>
+                            <li><a href="../views/institucional.html">Institucional</a></li>
+                            <li><a href="../views/profesionales.html">Profesionales</a></li>
+                            <li><a href="./contacto.html">Contacto</a></li>
+                            <li class="cta"><a href="../views/turnos.html">Reserva tu turno</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                
+                <div class="contacto-wrapper">
+                    <div class="hero-content">
+                        <h1>Estamos aquí<span> para ayudarte</span></h1>
+                        <p>Si tienes preguntas, necesitas agendar una cita o simplemente quieres más información sobre nuestros servicios, no dudes en contactarnos.</p>
+                    </div>
+                    <form class="form form_contacto" name="contacto">
+                        <div class="form-row">
+                            <div class="form-section">
+                                <label for="nombre">Nombre y Apellido</label>
+                                <input type="text" id="nombre" placeholder="" required>
+                            </div>
+                            <div class="form-section">
+                                <label for="telefono">Telefono</label>
+                                <input type="text" id="telefono" placeholder="" required>
+                            </div>
+                        </div>
+                        <div class="form-section">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" placeholder="" required>
+                        </div>
+                        <div class="form-section">
+                            <label for="mensaje">Mensaje</label>
+                            <textarea id="mensaje" placeholder="" required></textarea>
+                        </div>
+                        <button type="submit" class="boton-principal">Enviar</button>
+                    </form>
+                </div>
+            </div>
+    </header>
+    <footer class="main-footer">
+        <div class="footer-wrapper">
+            <div class="footer-content-columnas">
+                <div class="footer-left-columna">
+                    <div class="logo">
+                        <img src="../img/logo-idw-blanco.png" alt="IDW Logo">
+                    </div>
+                    <p>
+                        Nuestro compromiso es tu bienestar integral, combinando tecnología y cuidado personalizado.
+                    </p>
+                    <div class="redes-sociales">
+                        <a href="https://www.facebook.com/" target="_blank">
+                            <iconify-icon icon="mdi:facebook"></iconify-icon>
+                        </a>
+                        <a href="https://www.instagram.com/" target="_blank">
+                            <iconify-icon icon="mdi:instagram"></iconify-icon>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-right-columnas">
+                    <div class="footer-nav-section">
+                        <h3>Navegación</h3>
+                        <ul>
+                            <li><a href="../index.html">Inicio</a></li>
+                            <li><a href="../views/institucional.html">Institucional</a></li>
+                            <li><a href="../views/profesionales.html">Profesionales</a></li>
+                            <li><a href="./contacto.html">Contacto</a></li>
+                            <li><a href="../views/turnos.html">Reserva tu turno</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-legal">
+                        <h3>Legales</h3>
+                        <ul>
+                            <li><a href="#">Términos y Condiciones</a></li>
+                            <li><a href="#">Política de Privacidad</a></li>
+                            <li><a href="#">Política de Cookies</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-copyright">
+                <p>© 2025 IDW Centro Médico. Todos los derechos reservados.</p>
             </div>
         </div>
-        <button type="submit">Reservar Turno</button>
-        <button type="submit">Buscar / Borrar Turnos</button>
-    </form>
+    </footer>
+
 </body>
 </html>

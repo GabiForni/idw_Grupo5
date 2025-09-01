@@ -17,7 +17,7 @@
         href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
     <link rel="icon" href="">    
-    <title>Profesionales</title>
+    <title>Reserva turnos</title>
 </head>
 <body>
      <header class="internas-header">
@@ -32,88 +32,50 @@
                     <ul>
                         <li><a href="../index.html">Inicio</a></li>
                         <li><a href="../views/institucional.html">Institucional</a></li>
-                        <li><a href="./profesionales.html">Profesionales</a></li>
+                        <li><a href="../views/profesionales.html">Profesionales</a></li>
                         <li><a href="../views/contacto.html">Contacto</a></li>
-                        <li class="cta"><a href="../views/turnos.html">Reserva tu turno</a></li>
+                        <li class="cta"><a href="./turnos.html">Reserva tu turno</a></li>
                     </ul>
                 </nav>
             </div>
             
             <div class="hero-content-internas">
-                <h1>Conoce al equipo médico</h1>
+                <h1>Reserva tu turno</h1>
             </div>
+
         </div>
     </header>
     <main>
-        <section class="profesionales-intro">
-            <h2>Nuestros <span>profesionales</span></h2>
-            <div class="box-profesionales">
-                <div class="card-profesional">
-                    <div class="imagen-equipo">
-                        <img src="../img/persona-2.png" alt="persona-2">
-                    </div>
-                    <div class="info">
-                    <h3>Dra. Ramirez, Andrea</h3>
-                    <p>Matricula: 5944</p>
-                    <p>Especialidad: Pediatría</p>
-                    <details>
-                        <summary>Obras Sociales:</summary> 
-                        <ul>
-                            <li>IAPOS</li>
-                            <li>OSUNL</li>
-                            <li>Jerárquicos</li>
-                            <li>SanCor Salud</li>
-                            <li>Swiss Medical</li>
-                            <li>PAMI</li>
-                            <li>OSPIL</li>
-                        </ul>
-                    </details>
-                    </div>
+        <form class="form" name="turno">
+            <div class="form-section">
+                <label for="ua">Unidad en la que desea atenderse:</label>
+                <select id="ua">
+                    <option label="--Seleccione--" selected="selected"></option>
+                    <option value="1">Clínica Pediátrica</option>
+                    <option value="2">Clínica Oftalmológica</option>
+                    <option value="3">Clínica Traumatológica</option>
+                    <option value="4">Clínica Cardiológica</option>
+                </select>
+            </div>
+            
+            <div class="form-section">
+                <label>Ingrese sus datos por favor:</label>
+                <div class="data-group">
+                    <select>
+                        <option value="5">DNI</option>
+                        <option value="6">LE</option>
+                        <option value="7">LC</option>
+                    </select>
+                    <input type="text" id="dni" placeholder="--Ingrese--" required>
                 </div>
-                <div class="card-profesional">
-                    <div class="imagen-equipo">
-                        <img src="../img/persona-1.png" alt="persona-1">
-                    </div>
-                    <div class="info">
-                    <h3>Dr. Gutierrez, Raúl</h3>
-                    <p>Matricula: 4728</p>
-                    <p>Especialidad: Odontología</p>
-                    <details>
-                        <summary>Obras Sociales:</summary> 
-                        <ul>
-                            <li>IAPOS</li>
-                            <li>OSUNL</li>
-                            <li>Jerárquicos</li>
-                            <li>SanCor Salud</li>
-                            <li>Federada Salud</li>
-                        </ul>
-                    </details>
-                    </div>
-                </div>
-                <div class="card-profesional">
-                    <div class="imagen-equipo">
-                        <img src="../img/persona-3.png" alt="persona-3">
-                    </div>
-                    <div class="info">
-                    <h3>Dr. Ortiz, Hugo</h3>
-                    <p>Matricula: 9203</p>
-                    <p>Especialidad: Cardiólogo</p>
-                    <details>
-                        <summary>Obras Sociales:</summary> 
-                        <ul>
-                            <li>IAPOS</li>
-                            <li>OSUNL</li>
-                            <li>Jerárquicos</li>
-                            <li>SanCor Salud</li>
-                            <li>Federada Salud</li>
-                            <li>UPCN</li>
-                            <li>Obra Social Ospil</li>
-                        </ul>
-                    </details>
-                    </div>
-                </div>
-            <div>
-        </section>
+            </div>
+            
+            <div class="form-section">
+                <label for="fechaNacimiento">Fecha de nacimiento:</label>
+                <input type="date" id="fechaNacimiento" required>
+            </div>
+            <button type="submit" class="boton-principal">Reservar Turno</button>
+        </form>
     </main>
     <footer class="main-footer">
         <div class="footer-wrapper">
