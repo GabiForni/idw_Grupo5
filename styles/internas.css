@@ -118,7 +118,7 @@ body {
     line-height: 1.6rem;
 }
 
-/* --- Portadas generales --- */
+/* --- Portadas  --- */
 
 
 .internas-header {
@@ -157,8 +157,9 @@ body {
 
 /* --- nosotros --- */
 .nosotros-intro{
-    width: 60%;
+    max-width: 70%;
 }
+
 .nosotros-intro, .profesionales-intro {
     margin: var(--spacing-20) auto;
     display: flex;
@@ -167,6 +168,8 @@ body {
     text-align: center;
     gap: 20px;
 }
+
+/* --- profesionales --- */
 
 
 .box-profesionales{
@@ -226,6 +229,7 @@ body {
 .info details ul li{
     list-style-type: none;
 }
+
 /* --- contacto --- */
 
 .contacto-wrapper {
@@ -253,9 +257,8 @@ body {
 }
 
 
-/* --- Formulario turnos --- */
+/* --- Formulario--- */
 
-/* Estilos del contenedor principal del formulario */
 .form {
     width: 100%;
     max-width: 600px;
@@ -273,7 +276,6 @@ body {
     min-width: 45%;
 }
 
-/* Estilos para las secciones del formulario */
 .form-section {
     display: flex;
     flex-direction: column;
@@ -282,11 +284,11 @@ body {
 
 .form-row {
     display: flex;
-    gap: 20px; /* Ajusta este valor para controlar el espacio entre los campos */
+    gap: 20px; 
 }
 
 .form-row .form-section {
-    flex: 1; /* Esto hace que cada columna ocupe el mismo ancho disponible */
+    flex: 1; 
 }
 
 .form label {
@@ -296,7 +298,6 @@ body {
     color: var(--color-gray-800);
 }
 
-/* Estilos para los campos de entrada y select */
 .form select,
 .form input[type="text"],
 .form input[type="date"],
@@ -323,7 +324,6 @@ body {
     border-color: var(--color-primary);
 }
 
-/* Estilo para el grupo de datos DNI/LC/LE */
 .data-group {
     display: flex;
     gap: 10px;
@@ -331,14 +331,13 @@ body {
 }
 
 .data-group select {
-    width: 120px; /* Ancho fijo para el selector de tipo de documento */
+    width: 120px; 
 }
 
 .data-group input {
-    flex-grow: 1; /* El input se expande para ocupar el espacio restante */
+    flex-grow: 1; 
 }
 
-/* Estilos de los botones */
 .button-group {
     display: flex;
     justify-content: flex-start;
