@@ -253,8 +253,6 @@ body {
 }
 
 
-
-
 /* --- Formulario turnos --- */
 
 /* Estilos del contenedor principal del formulario */
@@ -272,7 +270,7 @@ body {
 }
 
 .form_contacto{
-    min-width: 800px;
+    min-width: 45%;
 }
 
 /* Estilos para las secciones del formulario */
