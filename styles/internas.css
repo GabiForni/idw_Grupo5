@@ -250,26 +250,26 @@ body {
 
 
 .contacto-wrapper {
-    width: 90%;
+    width: 98%;
     margin: auto;
     display: flex;
     flex-direction:row;
+    justify-content: space-between;
     align-items: center;
-    text-align: start;
+    gap: var(--spacing-24);
 }
 
 
 .contacto-wrapper .hero-content{
     text-align: start;
-    width: 50%;
+    max-width: 50%;
 }
 
 
 /* --- Formularios--- */
 
 .form {
-    width: 100%;
-    max-width: 30%;
+    width: 35%;
     margin: 40px auto;
     padding: 30px;
     background-color: var(--color-white);
@@ -281,18 +281,18 @@ body {
 }
 
 .form_contacto{
-    max-width: 40%;
+    width: 40%;
+    margin: 0;
 }
 
 .form-section {
     display: flex;
     flex-direction: column;
-    gap: 10px;
 }
 
 .form-row {
     display: flex;
-    gap: 20px; 
+    gap: 20px;
 }
 
 .form-row .form-section {
@@ -301,7 +301,7 @@ body {
 
 .form label {
     font-family: var(--font-heading);
-    font-size: var(--font-size-lg);
+    font-size: var(--font-size-base);
     font-weight: 600;
     color: var(--color-gray-800);
 }
@@ -312,7 +312,7 @@ body {
 .form input[type="email"],
 .form textarea {
     width: 100%;
-    padding: 15px 15px;
+    padding: 15px;
     background-color: var(--color-primary-light);
     border: none;
     border-radius: var(--border-radius-lg);
@@ -323,9 +323,6 @@ body {
     transition: border-color 0.3s ease;
 }
 
-.form_contacto textarea{
-    height: 150px;
-}
 
 .form select:focus,
 .form input:focus {
@@ -354,9 +351,9 @@ body {
 }
 
 .form button {
-    padding: 12px 25px;
+    padding: 15px;
     border: none;
-    border-radius: 50px;
+    border-radius: var(--border-radius-full);
     font-weight: bold;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
