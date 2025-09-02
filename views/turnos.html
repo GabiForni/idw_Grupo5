@@ -17,56 +17,70 @@
         href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
     <link rel="icon" href="">    
-    <title>Contacto</title>
+    <title>Reserva turnos</title>
 </head>
 <body>
-    <header class="main-header">
-            <div class="content-contacto">
-                <div class="header-container">
-                    <a href="../index.html" class="logo">
-                        <img src="../img/logo-idw.png" alt="IDW Logo">
-                    </a>
-                    
-                    <nav class="menu-nav">
-                        <ul>
-                            <li><a href="../index.html">Inicio</a></li>
-                            <li><a href="../views/institucional.html">Institucional</a></li>
-                            <li><a href="../views/profesionales.html">Profesionales</a></li>
-                            <li><a href="./contacto.html">Contacto</a></li>
-                            <li class="cta"><a href="../views/turnos.html">Reserva tu turno</a></li>
-                        </ul>
-                    </nav>
-                </div>
+     <header class="internas-header">
+        <div class="internas-content-wrapper">
+            
+            <div class="header-container">
+                <a href="../index.html" class="logo">
+                    <img src="../img/logo-idw-blanco.png" alt="IDW Logo">
+                </a>
                 
-                <div class="contacto-wrapper">
-                    <div class="hero-content">
-                        <h1>Estamos aquí<span> para ayudarte</span></h1>
-                        <p>Si tienes preguntas, necesitas agendar una cita o simplemente quieres más información sobre nuestros servicios, no dudes en contactarnos.</p>
-                    </div>
-                    <form class="form form_contacto" name="contacto">
-                        <div class="form-row">
-                            <div class="form-section">
-                                <label for="nombre">Nombre y Apellido</label>
-                                <input type="text" id="nombre" placeholder="" required>
-                            </div>
-                            <div class="form-section">
-                                <label for="telefono">Telefono</label>
-                                <input type="text" id="telefono" placeholder="" required>
-                            </div>
-                        </div>
-                        <div class="form-section">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" placeholder="" required>
-                        </div>
-                        <div class="form-section">
-                            <label for="mensaje">Mensaje</label>
-                            <textarea id="mensaje" placeholder="" required></textarea>
-                        </div>
-                        <button type="submit" class="boton-principal">Enviar</button>
-                    </form>
+                <nav class="menu-nav">
+                    <ul>
+                        <li><a href="../index.html">Inicio</a></li>
+                        <li><a href="../views/institucional.html">Institucional</a></li>
+                        <li><a href="../views/profesionales.html">Profesionales</a></li>
+                        <li><a href="../views/contacto.html">Contacto</a></li>
+                        <li class="cta"><a href="./turnos.html">Reserva tu turno</a></li>
+                    </ul>
+                </nav>
+            </div>
+            
+            <div class="hero-content-internas">
+                <h1>Reserva tu turno</h1>
+            </div>
+
+        </div>
+    </header>
+    <main>
+        <form class="form" name="turno">
+            <div class="form-section">
+                <label for="ua">Unidad en la que desea atenderse:</label>
+                <select id="ua">
+                    <option label="--Seleccione--" selected="selected"></option>
+                    <option value="1">Clínica Pediátrica</option>
+                    <option value="2">Clínica Oftalmológica</option>
+                    <option value="3">Clínica Traumatológica</option>
+                    <option value="4">Clínica Cardiológica</option>
+                </select>
+            </div>
+            
+            <div class="form-section">
+                <label>Ingrese sus datos por favor:</label>
+                <div class="data-group">
+                    <select>
+                        <option value="5">DNI</option>
+                        <option value="6">LE</option>
+                        <option value="7">LC</option>
+                    </select>
+                    <input type="text" id="dni" placeholder="--Ingrese--" required>
                 </div>
             </div>
-    </header>
+            
+            <div class="form-section">
+                <label for="fechaNacimiento">Fecha de nacimiento:</label>
+                <input type="date" id="fechaNacimiento" required>
+            </div>
+            <div class="form-section">
+                <label for="fechaTurno">Seleccione una fecha</label>
+                <input type="date" id="fechaTurno" required>
+            </div>
+            <button type="submit" class="boton-principal">Reservar Turno</button>
+        </form>
+    </main>
     <footer class="main-footer">
         <div class="footer-wrapper">
             <div class="footer-content-columnas">
@@ -94,8 +108,8 @@
                             <li><a href="../index.html">Inicio</a></li>
                             <li><a href="../views/institucional.html">Institucional</a></li>
                             <li><a href="../views/profesionales.html">Profesionales</a></li>
-                            <li><a href="./contacto.html">Contacto</a></li>
-                            <li><a href="../views/turnos.html">Reserva tu turno</a></li>
+                            <li><a href="../views/contacto.html">Contacto</a></li>
+                            <li><a href="./turnos.html">Reserva tu turno</a></li>
                         </ul>
                     </div>
 
@@ -115,6 +129,5 @@
             </div>
         </div>
     </footer>
-
 </body>
 </html>

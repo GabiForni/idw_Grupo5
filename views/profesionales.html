@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href=""> 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="icon" type="image/png" href="../img/favicon.png">
+    <link rel="stylesheet" href="../styles/index.css"> 
+    <link rel="stylesheet" href="../styles/internas.css"> 
+    <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
@@ -13,20 +16,43 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
-    <link rel="icon" href="">
+    <link rel="icon" href="">    
     <title>Profesionales</title>
 </head>
 <body>
-    <header>
-        <h1>Centro Médico - IDW S.A.</h1>
+     <header class="internas-header">
+        <div class="internas-content-wrapper">
+            
+            <div class="header-container">
+                <a href="../index.html" class="logo">
+                    <img src="../img/logo-idw-blanco.png" alt="IDW Logo">
+                </a>
+                
+                <nav class="menu-nav">
+                    <ul>
+                        <li><a href="../index.html">Inicio</a></li>
+                        <li><a href="../views/institucional.html">Institucional</a></li>
+                        <li><a href="./profesionales.html">Profesionales</a></li>
+                        <li><a href="../views/contacto.html">Contacto</a></li>
+                        <li class="cta"><a href="../views/turnos.html">Reserva tu turno</a></li>
+                    </ul>
+                </nav>
+            </div>
+            
+            <div class="hero-content-internas">
+                <h1>Conoce al equipo médico</h1>
+            </div>
+        </div>
     </header>
     <main>
-        <section>
-            <h2>Profesionales</h2>
-        </section>
-        <section>
-            <div class="boxProfesional" id="datosProfesional">
-                <div class="prof">
+        <section class="profesionales-intro">
+            <h2>Nuestros <span>profesionales</span></h2>
+            <div class="box-profesionales">
+                <div class="card-profesional">
+                    <div class="imagen-equipo">
+                        <img src="../img/persona-2.png" alt="persona-2">
+                    </div>
+                    <div class="info">
                     <h3>Dra. Ramirez, Andrea</h3>
                     <p>Matricula: 5944</p>
                     <p>Especialidad: Pediatría</p>
@@ -42,8 +68,13 @@
                             <li>OSPIL</li>
                         </ul>
                     </details>
+                    </div>
                 </div>
-                <div class="prof">
+                <div class="card-profesional">
+                    <div class="imagen-equipo">
+                        <img src="../img/persona-1.png" alt="persona-1">
+                    </div>
+                    <div class="info">
                     <h3>Dr. Gutierrez, Raúl</h3>
                     <p>Matricula: 4728</p>
                     <p>Especialidad: Odontología</p>
@@ -57,8 +88,13 @@
                             <li>Federada Salud</li>
                         </ul>
                     </details>
+                    </div>
                 </div>
-                <div class="prof">
+                <div class="card-profesional">
+                    <div class="imagen-equipo">
+                        <img src="../img/persona-3.png" alt="persona-3">
+                    </div>
+                    <div class="info">
                     <h3>Dr. Ortiz, Hugo</h3>
                     <p>Matricula: 9203</p>
                     <p>Especialidad: Cardiólogo</p>
@@ -74,12 +110,58 @@
                             <li>Obra Social Ospil</li>
                         </ul>
                     </details>
+                    </div>
                 </div>
             <div>
         </section>
     </main>
+    <footer class="main-footer">
+        <div class="footer-wrapper">
+            <div class="footer-content-columnas">
+                <div class="footer-left-columna">
+                    <div class="logo">
+                        <img src="../img/logo-idw-blanco.png" alt="IDW Logo">
+                    </div>
+                    <p>
+                        Nuestro compromiso es tu bienestar integral, combinando tecnología y cuidado personalizado.
+                    </p>
+                    <div class="redes-sociales">
+                        <a href="https://www.facebook.com/" target="_blank">
+                            <iconify-icon icon="mdi:facebook"></iconify-icon>
+                        </a>
+                        <a href="https://www.instagram.com/" target="_blank">
+                            <iconify-icon icon="mdi:instagram"></iconify-icon>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-right-columnas">
+                    <div class="footer-nav-section">
+                        <h3>Navegación</h3>
+                        <ul>
+                            <li><a href="../index.html">Inicio</a></li>
+                            <li><a href="../views/institucional.html">Institucional</a></li>
+                            <li><a href="../views/profesionales.html">Profesionales</a></li>
+                            <li><a href="../views/contacto.html">Contacto</a></li>
+                            <li><a href="./turnos.html">Reserva tu turno</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-legal">
+                        <h3>Legales</h3>
+                        <ul>
+                            <li><a href="#">Términos y Condiciones</a></li>
+                            <li><a href="#">Política de Privacidad</a></li>
+                            <li><a href="#">Política de Cookies</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-copyright">
+                <p>© 2025 IDW Centro Médico. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
 </body>
-<footer>
-    <p>© IDW S.A.</p>
-</footer>
 </html>
