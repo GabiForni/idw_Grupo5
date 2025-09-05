@@ -8,10 +8,10 @@
 
 
 ## Integrantes del Grupo
-- [Natalia Gonzalez]
-- [Gabriel, Forni]
-- [Noelia, Rodeiro]
-- [Fernando, Rodriguez]
+- Natalia Gonzalez
+- Gabriel, Forni
+- Noelia, Rodeiro
+- Fernando, Rodriguez
 
 ## Estructura del Proyecto
 
@@ -34,10 +34,13 @@ Este proyecto constituye la primera entrega del Trabajo Final Integrador para la
 
 ## Tecnologías Utilizadas
 
-- HTML5 para la estructura semántica
-- CSS3 para los estilos y diseño
-- Sistema de control de versiones Git
-- Plataforma GitHub para alojamiento del repositorio
+- <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" width="16" height="16"> HTML5 para la estructura semántica
+
+- <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" width="16" height="16"> CSS3 para los estilos y diseño
+
+- <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" width="16" height="16"> Sistema de control de versiones Git
+
+- <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" width="16" height="16"> Plataforma GitHub para alojamiento del repositorio
 
 ## Características Implementadas
 
