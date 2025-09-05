@@ -2,6 +2,11 @@
 ## Introducción al Desarrollo Web
 ### Tecnicatura Universitaria en Desarrollo Web - UNER
 
+## Imagenes del proyecto desplegado ##
+<div align="center"> <img src="https://res.cloudinary.com/dpvzlh1zv/image/upload/v1757097192/IDW%20-%202025/1_dbnt0p.png" alt="Página de Inicio" width="45%" style="margin: 5px;"> <img src="https://res.cloudinary.com/dpvzlh1zv/image/upload/v1757097191/IDW%20-%202025/2_ujemc8.png" alt="Página Institucional" width="45%" style="margin: 5px;"> <br> <img src="https://res.cloudinary.com/dpvzlh1zv/image/upload/v1757097191/IDW%20-%202025/3_omi7qj.png" alt="Página de Profesionales" width="45%" style="margin: 5px;"> <img src="https://res.cloudinary.com/dpvzlh1zv/image/upload/v1757097191/IDW%20-%202025/4_x67lwe.png" alt="Página de Contacto" width="45%" style="margin: 5px;"> </div>
+
+
+
 ## Integrantes del Grupo
 - [Natalia Gonzalez]
 - [Gabriel, Forni]
