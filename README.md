@@ -5,7 +5,7 @@
 ## Integrantes del Grupo
 - [Natalia Gonzalez]
 - [Gabriel, Forni]
-- [Noelia, Rodeiro]
+- [Noelia, Mariana Rodeiro]
 - [Fernando, Rodriguez]
 
 ## Estructura del Proyecto
