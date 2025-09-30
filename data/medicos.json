@@ -1,0 +1,298 @@
+[
+    {
+        "id": 1,
+        "nombre": "Dra. María González",
+        "imagen": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
+        "descripcion": "Cardióloga con más de 10 años de experiencia. Especialista en enfermedades cardiovasculares y rehabilitación cardíaca.",
+        "especialidades": [
+            "Cardiología",
+            "Medicina Interna"
+        ],
+        "experiencia": "12 años",
+        "ubicacion": "Clínica Central",
+        "horario": "Lun-Vie: 9am-5pm",
+        "calificacion": 4.5,
+        "disponibilidad": "available"
+    },
+    {
+        "id": 2,
+        "nombre": "Dr. Carlos Rodríguez",
+        "imagen": "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
+        "descripcion": "Pediatra especializado en atención neonatal y desarrollo infantil. Comprometido con el bienestar integral de los niños.",
+        "especialidades": [
+            "Pediatría",
+            "Neonatología"
+        ],
+        "experiencia": "8 años",
+        "ubicacion": "Hospital Infantil",
+        "horario": "Lun-Sáb: 8am-4pm",
+        "calificacion": 5.0,
+        "disponibilidad": "available"
+    },
+    {
+        "id": 3,
+        "nombre": "Dra. Laura Martínez",
+        "imagen": "https://images.unsplash.com/photo-1594824947933-d0501ba2fe65?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
+        "descripcion": "Dermatóloga con enfoque en dermatología estética y cirugía dermatológica. Atención personalizada para cada paciente.",
+        "especialidades": [
+            "Dermatología",
+            "Estética"
+        ],
+        "experiencia": "6 años",
+        "ubicacion": "Centro Dermatológico",
+        "horario": "Mar-Jue: 10am-6pm",
+        "calificacion": 4.0,
+        "disponibilidad": "unavailable"
+    },
+    {
+        "id": 4,
+        "nombre": "Dr. Javier López",
+        "imagen": "https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80",
+        "descripcion": "Traumatólogo especializado en cirugía articular y deportiva. Amplia experiencia en lesiones deportivas y artroscopia.",
+        "especialidades": [
+            "Traumatología",
+            "Cirugía Deportiva"
+        ],
+        "experiencia": "15 años",
+        "ubicacion": "Centro Médico Deportivo",
+        "horario": "Lun-Vie: 8am-6pm",
+        "calificacion": 5.0,
+        "disponibilidad": "available"
+    },
+    {
+        "id": 5,
+        "nombre": "Dra. Ana Sánchez",
+        "imagen": "https://images.unsplash.com/photo-1591604021695-0c69b7c05981?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
+        "descripcion": "Ginecóloga y obstetra con especialización en medicina reproductiva. Atención integral para la mujer.",
+        "especialidades": [
+            "Ginecología",
+            "Obstetricia"
+        ],
+        "experiencia": "10 años",
+        "ubicacion": "Centro de Salud Femenina",
+        "horario": "Lun-Vie: 9am-4pm",
+        "calificacion": 4.8,
+        "disponibilidad": "available"
+    },
+    {
+        "id": 6,
+        "nombre": "Dr. Roberto Díaz",
+        "imagen": "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
+        "descripcion": "Neurólogo especializado en enfermedades neurodegenerativas. Investigador en tratamientos innovadores.",
+        "especialidades": [
+            "Neurología"
+        ],
+        "experiencia": "14 años",
+        "ubicacion": "Instituto Neurológico",
+        "horario": "Lun-Jue: 8am-3pm",
+        "calificacion": 4.7,
+        "disponibilidad": "available"
+    },
+    {
+        "id": 7,
+        "nombre": "Dra. Carmen Ruiz",
+        "imagen": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
+        "descripcion": "Oftalmóloga con subespecialidad en retina. Experta en cirugía láser y tratamiento de enfermedades oculares.",
+        "especialidades": [
+            "Oftalmología",
+            "Retina"
+        ],
+        "experiencia": "9 años",
+        "ubicacion": "Clínica Oftalmológica",
+        "horario": "Lun-Vie: 10am-7pm",
+        "calificacion": 4.9,
+        "disponibilidad": "available"
+    },
+    {
+        "id": 8,
+        "nombre": "Dr. Miguel Ángel Torres",
+        "imagen": "https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80",
+        "descripcion": "Psiquiatra especializado en trastornos de ansiedad y depresión. Enfoque en terapia integral.",
+        "especialidades": [
+            "Psiquiatría",
+            "Psicoterapia"
+        ],
+        "experiencia": "11 años",
+        "ubicacion": "Centro de Salud Mental",
+        "horario": "Lun-Vie: 9am-6pm",
+        "calificacion": 4.6,
+        "disponibilidad": "unavailable"
+    },
+    {
+        "id": 9,
+        "nombre": "Dra. Patricia Morales",
+        "imagen": "https://images.unsplash.com/photo-1591604021695-0c69b7c05981?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
+        "descripcion": "Endocrinóloga especialista en diabetes y trastornos metabólicos. Abordaje preventivo y tratamiento personalizado.",
+        "especialidades": [
+            "Endocrinología",
+            "Diabetes"
+        ],
+        "experiencia": "13 años",
+        "ubicacion": "Hospital General",
+        "horario": "Mar-Vie: 8am-2pm",
+        "calificacion": 4.8,
+        "disponibilidad": "available"
+    },
+    {
+        "id": 10,
+        "nombre": "Dr. Fernando Castro",
+        "imagen": "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
+        "descripcion": "Cirujano general con especialización en cirugía laparoscópica. Mínimamente invasivo para recuperación rápida.",
+        "especialidades": [
+            "Cirugía General",
+            "Laparoscopia"
+        ],
+        "experiencia": "16 años",
+        "ubicacion": "Centro Quirúrgico Avanzado",
+        "horario": "Lun-Mie: 7am-4pm",
+        "calificacion": 4.9,
+        "disponibilidad": "available"
+    },
+    {
+        "id": 11,
+        "nombre": "Dra. Isabel Vargas",
+        "imagen": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
+        "descripcion": "Oncóloga médica especializada en cáncer de mama. Tratamientos personalizados y seguimiento integral.",
+        "especialidades": [
+            "Oncología",
+            "Mastología"
+        ],
+        "experiencia": "12 años",
+        "ubicacion": "Centro Oncológico",
+        "horario": "Lun-Vie: 8am-5pm",
+        "calificacion": 5.0,
+        "disponibilidad": "available"
+    },
+    {
+        "id": 12,
+        "nombre": "Dr. Alejandro Mendoza",
+        "imagen": "https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80",
+        "descripcion": "Ortopedista especialista en columna vertebral. Experto en cirugías reconstructivas y mínimamente invasivas.",
+        "especialidades": [
+            "Ortopedia",
+            "Columna Vertebral"
+        ],
+        "experiencia": "18 años",
+        "ubicacion": "Instituto Ortopédico",
+        "horario": "Lun-Jue: 9am-6pm",
+        "calificacion": 4.7,
+        "disponibilidad": "unavailable"
+    },
+    {
+        "id": 13,
+        "nombre": "Dra. Lucía Herrera",
+        "imagen": "https://images.unsplash.com/photo-1591604021695-0c69b7c05981?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
+        "descripcion": "Neumóloga especializada en enfermedades respiratorias crónicas. Investigadora en asma y EPOC.",
+        "especialidades": [
+            "Neumología"
+        ],
+        "experiencia": "10 años",
+        "ubicacion": "Hospital Pulmonar",
+        "horario": "Lun-Vie: 8am-3pm",
+        "calificacion": 4.6,
+        "disponibilidad": "available"
+    },
+    {
+        "id": 14,
+        "nombre": "Dr. Sergio Ortega",
+        "imagen": "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
+        "descripcion": "Gastroenterólogo especialista en endoscopia digestiva. Diagnóstico y tratamiento de enfermedades digestivas.",
+        "especialidades": [
+            "Gastroenterología",
+            "Endoscopia"
+        ],
+        "experiencia": "14 años",
+        "ubicacion": "Centro Digestivo",
+        "horario": "Mar-Vie: 9am-5pm",
+        "calificacion": 4.8,
+        "disponibilidad": "available"
+    },
+    {
+        "id": 15,
+        "nombre": "Dra. Elena Castillo",
+        "imagen": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
+        "descripcion": "Nefróloga especializada en trasplante renal. Manejo integral de pacientes con enfermedad renal crónica.",
+        "especialidades": [
+            "Nefrología",
+            "Trasplante Renal"
+        ],
+        "experiencia": "11 años",
+        "ubicacion": "Hospital Renal",
+        "horario": "Lun-Mie: 8am-4pm",
+        "calificacion": 4.9,
+        "disponibilidad": "available"
+    },
+    {
+        "id": 16,
+        "nombre": "Dr. Ricardo Silva",
+        "imagen": "https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80",
+        "descripcion": "Urólogo especialista en cirugía robótica. Tratamiento de enfermedades del tracto urinario masculino.",
+        "especialidades": [
+            "Urología",
+            "Cirugía Robótica"
+        ],
+        "experiencia": "15 años",
+        "ubicacion": "Centro Urológico",
+        "horario": "Lun-Vie: 9am-6pm",
+        "calificacion": 4.7,
+        "disponibilidad": "unavailable"
+    },
+    {
+        "id": 17,
+        "nombre": "Dra. Monica Ríos",
+        "imagen": "https://images.unsplash.com/photo-1591604021695-0c69b7c05981?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
+        "descripcion": "Reumatóloga especializada en enfermedades autoinmunes. Enfoque multidisciplinario para artritis y lupus.",
+        "especialidades": [
+            "Reumatología"
+        ],
+        "experiencia": "9 años",
+        "ubicacion": "Clínica Reumatológica",
+        "horario": "Lun-Jue: 10am-5pm",
+        "calificacion": 4.5,
+        "disponibilidad": "available"
+    },
+    {
+        "id": 18,
+        "nombre": "Dr. Andrés Navarro",
+        "imagen": "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
+        "descripcion": "Cardiólogo intervencionista. Experto en cateterismos y colocación de stents coronarios.",
+        "especialidades": [
+            "Cardiología Intervencionista"
+        ],
+        "experiencia": "13 años",
+        "ubicacion": "Hospital Cardiovascular",
+        "horario": "Lun-Vie: 7am-3pm",
+        "calificacion": 5.0,
+        "disponibilidad": "available"
+    },
+    {
+        "id": 19,
+        "nombre": "Dra. Verónica Paredes",
+        "imagen": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
+        "descripcion": "Hematóloga especialista en enfermedades de la sangre y médula ósea. Tratamiento de leucemias y linfomas.",
+        "especialidades": [
+            "Hematología",
+            "Oncohematología"
+        ],
+        "experiencia": "12 años",
+        "ubicacion": "Centro Hematológico",
+        "horario": "Mar-Vie: 8am-4pm",
+        "calificacion": 4.8,
+        "disponibilidad": "available"
+    },
+    {
+        "id": 20,
+        "nombre": "Dr. Oscar Medina",
+        "imagen": "https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80",
+        "descripcion": "Medicina familiar y comunitaria. Atención integral para toda la familia y seguimiento continuo.",
+        "especialidades": [
+            "Medicina Familiar",
+            "Medicina Comunitaria"
+        ],
+        "experiencia": "20 años",
+        "ubicacion": "Centro de Salud Familiar",
+        "horario": "Lun-Sáb: 8am-6pm",
+        "calificacion": 4.9,
+        "disponibilidad": "available"
+    }
+]

@@ -2,119 +2,94 @@
 <html lang="es">
 
 <head>
+    <!-- Codificación del documento -->
     <meta charset="UTF-8">
+
+    <!-- Viewport del navegador -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- FavIcon -->
     <link rel="icon" type="image/png" href="../img/favicon.png">
-    <link rel="stylesheet" href="../styles/index.css"> 
-    <link rel="stylesheet" href="../styles/internas.css"> 
+
+    <!-- Link archivo css -->
+    <link rel="stylesheet" href="../styles/index.css">
+
+    <!-- Link Estilos internos -->
+    <link rel="stylesheet" href="../styles/internas.css">
+
+    <!-- Libreria de Iconos -->
     <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap"
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@100..900&family=Inter:wght@100..900&display=swap"
         rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
-    <link rel="icon" href="">    
     <title>Profesionales</title>
 </head>
+
 <body>
-     <header class="internas-header">
+    <header class="internas-header">
         <div class="internas-content-wrapper">
-            
             <div class="header-container">
                 <a href="../index.html" class="logo">
                     <img src="../img/logo-idw-blanco.png" alt="IDW Logo">
                 </a>
-                
-                <nav class="menu-nav">
-                    <ul>
-                        <li><a href="../index.html">Inicio</a></li>
-                        <li><a href="../views/institucional.html">Institucional</a></li>
-                        <li><a href="./profesionales.html">Profesionales</a></li>
-                        <li><a href="../views/contacto.html">Contacto</a></li>
-                        <li class="cta"><a href="../views/turnos.html">Reserva tu turno</a></li>
-                    </ul>
+                <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                    <div class="container">
+                        <!-- Botón hamburguesa --> <button class="navbar-toggler" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav"
+                            aria-expanded="false" aria-label="Toggle navigation"> <span
+                                class="navbar-toggler-icon"></span> </button> <!-- Links -->
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav ms-auto">
+                                <li class="nav-item"> <a class="nav-link" href="../index.html">Inicio</a> </li>
+                                <li class="nav-item"> <a class="nav-link"
+                                        href="../views/institucional.html">Institucional</a> </li>
+                                <li class="nav-item"> <a class="nav-link active" aria-current="page"
+                                        href="../views/profesionales.html">Profesionales</a> </li>
+                                <li class="nav-item"> <a class="nav-link" href="../views/contacto.html">Contacto</a>
+                                </li>
+                                <li class="nav-item"> <a class="btn btn-primary ms-lg-3"
+                                        href="../views/turnos.html">Reserva tu turno</a> </li>
+                            </ul>
+                        </div>
+                    </div>
                 </nav>
+                <!-- <nav class="menu-nav">
+          <ul>
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="../views/institucional.html">Institucional</a></li>
+            <li><a href="./profesionales.html" class="active">Profesionales</a></li>
+            <li><a href="../views/contacto.html">Contacto</a></li>
+            <li class="cta"><a href="../views/turnos.html">Reserva tu turno</a></li>
+          </ul>
+        </nav> -->
             </div>
-            
             <div class="hero-content-internas">
                 <h1>Conoce al equipo médico</h1>
             </div>
         </div>
     </header>
+
     <main>
-        <section class="profesionales-intro">
-            <h2>Nuestros <span>profesionales</span></h2>
-            <div class="box-profesionales">
-                <div class="card-profesional">
-                    <div class="imagen-equipo">
-                        <img src="../img/persona-2.png" alt="persona-2">
-                    </div>
-                    <div class="info">
-                    <h3>Dra. Ramirez, Andrea</h3>
-                    <p>Matricula: 5944</p>
-                    <p>Especialidad: Pediatría</p>
-                    <details>
-                        <summary>Obras Sociales:</summary> 
-                        <ul>
-                            <li>IAPOS</li>
-                            <li>OSUNL</li>
-                            <li>Jerárquicos</li>
-                            <li>SanCor Salud</li>
-                            <li>Swiss Medical</li>
-                            <li>PAMI</li>
-                            <li>OSPIL</li>
-                        </ul>
-                    </details>
-                    </div>
-                </div>
-                <div class="card-profesional">
-                    <div class="imagen-equipo">
-                        <img src="../img/persona-1.png" alt="persona-1">
-                    </div>
-                    <div class="info">
-                    <h3>Dr. Gutierrez, Raúl</h3>
-                    <p>Matricula: 4728</p>
-                    <p>Especialidad: Odontología</p>
-                    <details>
-                        <summary>Obras Sociales:</summary> 
-                        <ul>
-                            <li>IAPOS</li>
-                            <li>OSUNL</li>
-                            <li>Jerárquicos</li>
-                            <li>SanCor Salud</li>
-                            <li>Federada Salud</li>
-                        </ul>
-                    </details>
-                    </div>
-                </div>
-                <div class="card-profesional">
-                    <div class="imagen-equipo">
-                        <img src="../img/persona-3.png" alt="persona-3">
-                    </div>
-                    <div class="info">
-                    <h3>Dr. Ortiz, Hugo</h3>
-                    <p>Matricula: 9203</p>
-                    <p>Especialidad: Cardiólogo</p>
-                    <details>
-                        <summary>Obras Sociales:</summary> 
-                        <ul>
-                            <li>IAPOS</li>
-                            <li>OSUNL</li>
-                            <li>Jerárquicos</li>
-                            <li>SanCor Salud</li>
-                            <li>Federada Salud</li>
-                            <li>UPCN</li>
-                            <li>Obra Social Ospil</li>
-                        </ul>
-                    </details>
-                    </div>
-                </div>
-            <div>
+        <section class="profesionales-intro container py-5">
+            <h2 class="text-center mb-5">Nuestros <span>profesionales</span></h2>
+
+            <!-- Contenedor dinámico -->
+            <div id="profesionalesContainer" class="row"></div>
+
+            <!-- Paginación dinámica -->
+            <nav class="mt-4">
+                <ul id="pagination" class="pagination justify-content-center"></ul>
+            </nav>
         </section>
     </main>
+
     <footer class="main-footer">
         <div class="footer-wrapper">
             <div class="footer-content-columnas">
@@ -134,7 +109,6 @@
                         </a>
                     </div>
                 </div>
-
                 <div class="footer-right-columnas">
                     <div class="footer-nav-section">
                         <h3>Navegación</h3>
@@ -146,7 +120,6 @@
                             <li><a href="./turnos.html">Reserva tu turno</a></li>
                         </ul>
                     </div>
-
                     <div class="footer-legal">
                         <h3>Legales</h3>
                         <ul>
@@ -157,11 +130,14 @@
                     </div>
                 </div>
             </div>
-            
             <div class="footer-copyright">
                 <p>© 2025 IDW Centro Médico. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
+
+    <!-- Script dinámico -->
+    <script src="../scripts/profesionales.js"></script>
 </body>
+
 </html>
