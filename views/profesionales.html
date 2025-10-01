@@ -9,8 +9,9 @@
     <link rel="stylesheet" href="../styles/internas.css"> 
     <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap"rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -20,148 +21,259 @@
     <title>Profesionales</title>
 </head>
 <body>
-     <header class="internas-header">
-        <div class="internas-content-wrapper">
+    <header>
+        <div class="internas-content-wrapper d-flex flex-column m-3 rounded-4"> 
             
-            <div class="header-container">
-                <a href="../index.html" class="logo">
-                    <img src="../img/logo-idw-blanco.png" alt="IDW Logo">
-                </a>
-                
-                <nav class="menu-nav">
-                    <ul>
-                        <li><a href="../index.html">Inicio</a></li>
-                        <li><a href="../views/institucional.html">Institucional</a></li>
-                        <li><a href="./profesionales.html">Profesionales</a></li>
-                        <li><a href="../views/contacto.html">Contacto</a></li>
-                        <li class="cta"><a href="../views/turnos.html">Reserva tu turno</a></li>
-                    </ul>
-                </nav>
+            <nav class="navbar navbar-expand-lg navbar-light p-3">
+                <div class="container-fluid justify-content-between"> 
+                    
+                    <a class="navbar-brand" href="./index.html">
+                        <img src="../img/logo-idw.png" alt="IDW Logo" class="w-auto d-block logo-responsive">
+                    </a>
+
+                    <button class="navbar-toggler bg-white rounded-3 p-2 shadow-sm" type="button" 
+                            data-bs-toggle="collapse" 
+                            data-bs-target="#navbarNav" 
+                            aria-controls="navbarNav" 
+                            aria-expanded="false" 
+                            aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    
+                        <ul class="navbar-nav bg-white rounded-4 shadow-sm w-75 p-4 mt-5 d-lg-none position-absolute top-50 start-50 translate-middle-x"> 
+                            
+                            <li class="nav-item text-center"><a class="nav-link mx-2" href="../index.html">Inicio</a></li>
+                            <li class="nav-item text-center"><a class="nav-link mx-2" href="../views/institucional.html">Institucional</a></li>
+                            <li class="nav-item text-center"><a class="nav-link mx-2" href="../views/profesionales.html">Profesionales</a></li>
+                            <li class="nav-item text-center"><a class="nav-link mx-2" href="../views/contacto.html">Contacto</a></li>
+                            
+                            <li class="nav-item mt-3"> 
+                                <a class="btn btn-primary rounded-pill w-100 py-2" href="../views/turnos.html">Reserva tu turno</a>
+                            </li>
+                        </ul>
+
+                        <ul class="navbar-nav bg-white rounded-5 shadow-sm d-none d-lg-flex flex-lg-row align-items-lg-center p-2"> 
+                            
+                            <li class="nav-item"><a class="nav-link mx-2" href="../index.html">Inicio</a></li>
+                            <li class="nav-item"><a class="nav-link mx-2" href="../views/institucional.html">Institucional</a></li>
+                            <li class="nav-item"><a class="nav-link mx-2" href="../views/profesionales.html">Profesionales</a></li>
+                            <li class="nav-item"><a class="nav-link mx-2" href="../views/contacto.html">Contacto</a></li>
+                            
+                            <li class="nav-item ms-3"> 
+                                <a class="btn btn-primary rounded-pill px-3 py-2" href="../views/turnos.html">Reserva tu turno</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="hero-content-internas text-center m-auto col-12 col-md-8 col-lg-6 px-2"> 
+                <h1>Conoce al <span>equipo médico</span></h1>
             </div>
-            
-            <div class="hero-content-internas">
-                <h1>Conoce al equipo médico</h1>
-            </div>
+
         </div>
     </header>
     <main>
-        <section class="profesionales-intro">
-            <h2>Nuestros <span>profesionales</span></h2>
-            <div class="box-profesionales">
-                <div class="card-profesional">
-                    <div class="imagen-equipo">
-                        <img src="../img/persona-2.png" alt="persona-2">
-                    </div>
-                    <div class="info">
-                    <h3>Dra. Ramirez, Andrea</h3>
-                    <p>Matricula: 5944</p>
-                    <p>Especialidad: Pediatría</p>
-                    <details>
-                        <summary>Obras Sociales:</summary> 
-                        <ul>
-                            <li>IAPOS</li>
-                            <li>OSUNL</li>
-                            <li>Jerárquicos</li>
-                            <li>SanCor Salud</li>
-                            <li>Swiss Medical</li>
-                            <li>PAMI</li>
-                            <li>OSPIL</li>
-                        </ul>
-                    </details>
-                    </div>
-                </div>
-                <div class="card-profesional">
-                    <div class="imagen-equipo">
-                        <img src="../img/persona-1.png" alt="persona-1">
-                    </div>
-                    <div class="info">
-                    <h3>Dr. Gutierrez, Raúl</h3>
-                    <p>Matricula: 4728</p>
-                    <p>Especialidad: Odontología</p>
-                    <details>
-                        <summary>Obras Sociales:</summary> 
-                        <ul>
-                            <li>IAPOS</li>
-                            <li>OSUNL</li>
-                            <li>Jerárquicos</li>
-                            <li>SanCor Salud</li>
-                            <li>Federada Salud</li>
-                        </ul>
-                    </details>
+        <br>
+        <div class="container my-5">
+            <h2 class="text-center my-5">Nuestros <span>Profesionales</span></h2>
+            
+            <div class="row g-5"> 
+                
+                <div class="col-12 col-md-6 col-lg-4"> 
+                    <div class="card shadow border-0 rounded-4 card-gradient-bg p-3">
+                        <img src="../img/persona-1.png" class="card-img-top w-100" alt="Dr. Gutierrez Raúl">
+                        <div class="card-body d-flex flex-column text-center bg-white rounded-3 gap-1"> 
+                            <h5 class="card-title fw-bold">Dr. Gutierrez Raúl</h5>
+                            <p class="card-text text-muted mb-0">Matrícula: 4728</p>
+                            <p class="card-text text-muted">Especialidad: Cardiología</p>
+                            <div class="mt-auto"> 
+                                <button class="btn btn-outline-primary rounded-pill w-100 mt-3" type="button" data-bs-toggle="collapse" data-bs-target="#obras1" aria-expanded="false" aria-controls="obras1">Obras Sociales</button>
+                                <div class="collapse" id="obras1">
+                                    <div class="mt-3">
+                                        <ul class="list-group list-group-flush small">
+                                            <li class="list-group-item">OSDE</li>
+                                            <li class="list-group-item">Swiss Medical</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="card-profesional">
-                    <div class="imagen-equipo">
-                        <img src="../img/persona-3.png" alt="persona-3">
-                    </div>
-                    <div class="info">
-                    <h3>Dr. Ortiz, Hugo</h3>
-                    <p>Matricula: 9203</p>
-                    <p>Especialidad: Cardiólogo</p>
-                    <details>
-                        <summary>Obras Sociales:</summary> 
-                        <ul>
-                            <li>IAPOS</li>
-                            <li>OSUNL</li>
-                            <li>Jerárquicos</li>
-                            <li>SanCor Salud</li>
-                            <li>Federada Salud</li>
-                            <li>UPCN</li>
-                            <li>Obra Social Ospil</li>
-                        </ul>
-                    </details>
+
+                <div class="col-12 col-md-6 col-lg-4"> 
+                    <div class="card shadow border-0 rounded-4 card-gradient-bg p-3">
+                        <img src="../img/persona-2.png" class="card-img-top w-100" alt="Dra. Pérez Lucía">
+                        <div class="card-body d-flex flex-column text-center bg-white rounded-3 gap-1"> 
+                            <h5 class="card-title fw-bold">Dra. Pérez Lucía</h5>
+                            <p class="card-text text-muted mb-0">Matrícula: 5890</p>
+                            <p class="card-text text-muted">Especialidad: Pediatría</p>
+                            <div class="mt-auto"> 
+                                <button class="btn btn-outline-primary rounded-pill w-100 mt-3" type="button" data-bs-toggle="collapse" data-bs-target="#obras2" aria-expanded="false" aria-controls="obras2">Obras Sociales</button>
+                                <div class="collapse" id="obras2">
+                                    <div class="mt-3">
+                                        <ul class="list-group list-group-flush small">
+                                            <li class="list-group-item">PAMI</li>
+                                            <li class="list-group-item">OSDE</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            <div>
-        </section>
+                
+                <div class="col-12 col-md-6 col-lg-4"> 
+                    <div class="card shadow border-0 rounded-4 card-gradient-bg p-3">
+                        <img src="../img/persona-3.png" class="card-img-top w-100" alt="Lic. Gómez Ana">
+                        <div class="card-body d-flex flex-column text-center bg-white rounded-3 gap-1"> 
+                            <h5 class="card-title fw-bold">Lic. Gómez Ana</h5>
+                            <p class="card-text text-muted mb-0">Matrícula: 9912</p>
+                            <p class="card-text text-muted">Especialidad: Nutrición</p>
+                            <div class="mt-auto"> 
+                                <button class="btn btn-outline-primary rounded-pill w-100 mt-3" type="button" data-bs-toggle="collapse" data-bs-target="#obras3" aria-expanded="false" aria-controls="obras3">Obras Sociales</button>
+                                <div class="collapse" id="obras3">
+                                    <div class="mt-3">
+                                        <ul class="list-group list-group-flush small">
+                                            <li class="list-group-item">Omint</li>
+                                            <li class="list-group-item">Galeno</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-12 col-md-6 col-lg-4"> 
+                    <div class="card shadow border-0 rounded-4 card-gradient-bg p-3">
+                        <img src="../img/persona-4.png" class="card-img-top w-100" alt="Dr. Rivas Carlos">
+                        <div class="card-body d-flex flex-column text-center bg-white rounded-3 gap-1"> 
+                            <h5 class="card-title fw-bold">Dr. Rivas Carlos</h5>
+                            <p class="card-text text-muted mb-0">Matrícula: 3345</p>
+                            <p class="card-text text-muted">Especialidad: Dermatología</p>
+                            <div class="mt-auto"> 
+                                <button class="btn btn-outline-primary rounded-pill w-100 mt-3" type="button" data-bs-toggle="collapse" data-bs-target="#obras4" aria-expanded="false" aria-controls="obras4">Obras Sociales</button>
+                                <div class="collapse" id="obras4">
+                                    <div class="mt-3">
+                                        <ul class="list-group list-group-flush small">
+                                            <li class="list-group-item">PAMI</li>
+                                            <li class="list-group-item">Swiss Medical</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4"> 
+                    <div class="card shadow border-0 rounded-4 card-gradient-bg p-3">
+                        <img src="../img/persona-5.png" class="card-img-top w-100" alt="Dra. Torres Sofía">
+                        <div class="card-body d-flex flex-column text-center bg-white rounded-3 gap-1"> 
+                            <h5 class="card-title fw-bold">Dra. Torres Sofía</h5>
+                            <p class="card-text text-muted mb-0">Matrícula: 7654</p>
+                            <p class="card-text text-muted">Especialidad: Ginecología</p>
+                            <div class="mt-auto"> 
+                                <button class="btn btn-outline-primary rounded-pill w-100 mt-3" type="button" data-bs-toggle="collapse" data-bs-target="#obras5" aria-expanded="false" aria-controls="obras5">Obras Sociales</button>
+                                <div class="collapse" id="obras5">
+                                    <div class="mt-3">
+                                        <ul class="list-group list-group-flush small">
+                                            <li class="list-group-item">OSDE</li>
+                                            <li class="list-group-item">Omint</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4"> 
+                    <div class="card shadow border-0 rounded-4 card-gradient-bg p-3">
+                        <img src="../img/persona-6.png" class="card-img-top w-100" alt="Lic. Castro Hugo">
+                        <div class="card-body d-flex flex-column text-center bg-white rounded-3 gap-1"> 
+                            <h5 class="card-title fw-bold">Lic. Castro Hugo</h5>
+                            <p class="card-text text-muted mb-0">Matrícula: 1109</p>
+                            <p class="card-text text-muted">Especialidad: Kinesiología</p>
+                            <div class="mt-auto"> 
+                                <button class="btn btn-outline-primary rounded-pill w-100 mt-3" type="button" data-bs-toggle="collapse" data-bs-target="#obras6" aria-expanded="false" aria-controls="obras6">Obras Sociales</button>
+                                <div class="collapse" id="obras6">
+                                    <div class="mt-3">
+                                        <ul class="list-group list-group-flush small">
+                                            <li class="list-group-item">Galeno</li>
+                                            <li class="list-group-item">Jerárquicos</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div> 
+        </div>
     </main>
-    <footer class="main-footer">
-        <div class="footer-wrapper">
-            <div class="footer-content-columnas">
-                <div class="footer-left-columna">
+    <footer class="main-footer w-100 d-flex justify-content-center text-light mt-5">
+        <div class="container-fluid footer-wrapper d-flex flex-column m-3 rounded-5 p-5">  
+            
+            <div class="footer-content-columnas row g-5"> 
+
+                <div class="footer-left-columna col-12 col-lg-6">
                     <div class="logo">
-                        <img src="../img/logo-idw-blanco.png" alt="IDW Logo">
+                        <img src="../img/logo-idw-blanco.png" alt="Logo de la Institución" class="w-auto d-block logo-responsive"> 
                     </div>
-                    <p>
+                    <p class="mt-4 col-12 col-lg-6">
                         Nuestro compromiso es tu bienestar integral, combinando tecnología y cuidado personalizado.
                     </p>
-                    <div class="redes-sociales">
-                        <a href="https://www.facebook.com/" target="_blank">
-                            <iconify-icon icon="mdi:facebook"></iconify-icon>
+                    
+                    <div class="redes-sociales d-flex mt-4 gap-3"> 
+                        
+                        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" class="bg-white rounded-circle d-flex justify-content-center align-items-center p-1" style="width: 2.5rem; height: 2.5rem;">
+                            <i class="bi bi-facebook fs-4"></i>
                         </a>
-                        <a href="https://www.instagram.com/" target="_blank">
-                            <iconify-icon icon="mdi:instagram"></iconify-icon>
+                        
+                        <a href="https://www.instagram.com/"  target="_blank" rel="noopener noreferrer" class="bg-white rounded-circle d-flex justify-content-center align-items-center p-1" style="width: 2.5rem; height: 2.5rem;">
+                            <i class="bi bi-instagram fs-4"></i>
                         </a>
                     </div>
                 </div>
 
-                <div class="footer-right-columnas">
-                    <div class="footer-nav-section">
-                        <h3>Navegación</h3>
-                        <ul>
+                <div class="footer-right-columnas col-12 col-lg-6 d-flex justify-content-lg-end flex-wrap g-5">
+                
+                    <div class="footer-nav col-auto me-5">
+                        <h3 class="mb-4">Navegación</h3>
+                        <ul class="footer-links fs-6 list-unstyled">
                             <li><a href="../index.html">Inicio</a></li>
                             <li><a href="../views/institucional.html">Institucional</a></li>
                             <li><a href="../views/profesionales.html">Profesionales</a></li>
                             <li><a href="../views/contacto.html">Contacto</a></li>
-                            <li><a href="./turnos.html">Reserva tu turno</a></li>
+                            <li><a href="../views/turnos.html">Reserva tu turno</a></li>
                         </ul>
                     </div>
 
-                    <div class="footer-legal">
-                        <h3>Legales</h3>
-                        <ul>
-                            <li><a href="#">Términos y Condiciones</a></li>
-                            <li><a href="#">Política de Privacidad</a></li>
-                            <li><a href="#">Política de Cookies</a></li>
+                    <div class="footer-legal col-auto">
+                        <h3 class="mb-4">Legales</h3>
+                        <ul class="footer-links fs-6 list-unstyled">
+                            <li><a href="">Términos y Condiciones</a></li>
+                            <li><a href="">Política de Privacidad</a></li>
+                            <li><a href="">Política de Cookies</a></li>
                         </ul>
                     </div>
+
                 </div>
-            </div>
+
+            </div> 
             
-            <div class="footer-copyright">
-                <p>© 2025 IDW Centro Médico. Todos los derechos reservados.</p>
+            <div class="footer-copyright pt-4 mt-4 border-top border-light">
+                <p class="fs-6 text-center">© 2025 IDW Centro Médico. Todos los derechos reservados.</p>
             </div>
+
         </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
