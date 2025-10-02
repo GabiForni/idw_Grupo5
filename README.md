@@ -4,9 +4,9 @@
 
 ## Integrantes del Grupo
 - [Natalia Gonzalez]
-- [Gabriel, Forni]
-- [Noelia, Rodeiro]
-- [Fernando, Rodriguez]
+- [Gabriel Forni]
+- [Noelia Rodeiro]
+- [Fernando Rodriguez]
 
 ## Estructura del Proyecto
 
@@ -18,6 +18,7 @@ Este proyecto constituye la primera entrega del Trabajo Final Integrador para la
 2. **institucional.html** - Página de información institucional
 3. **profesionales.html** - Página de información sobre los profesionales de la institución
 4. **contacto.html** - Página de contacto
+5. **turnos.html** - Página para reservar turnos
 
 ## Objetivos Cumplidos
 
