@@ -1,108 +1,114 @@
 :root {
-            /* Colores principales */
-            --color-primary: #2c6fc3;
-            --color-primary-dark: #1a4d8c;
-            --color-primary-light: #5a92d6;
-            --color-secondary: #34c38f;
-            --color-accent: #ff6b72;
-            
-            /* Escala de grises */
-            --color-black: #000000;
-            --color-gray-900: #1a1a1a;
-            --color-gray-800: #333333;
-            --color-gray-700: #4d4d4d;
-            --color-gray-600: #666666;
-            --color-gray-500: #808080;
-            --color-gray-400: #999999;
-            --color-gray-300: #b3b3b3;
-            --color-gray-200: #cccccc;
-            --color-gray-100: #e6e6e6;
-            --color-white: #ffffff;
-            
-            /* Colores de fondo */
-            --bg-primary: var(--color-white);
-            --bg-secondary: #f8f9fa;
-            --bg-dark: var(--color-gray-900);
-            
-            /* Colores de texto */
-            --text-primary: var(--color-gray-900);
-            --text-secondary: var(--color-gray-700);
-            --text-light: var(--color-gray-600);
-            --text-inverse: var(--color-white);
-            --text-link: var(--color-primary);
-            --text-link-hover: var(--color-primary-dark);
-            
-            /* Tipografía */
-            --font-primary: 'inter';
-            --font-heading: 'urbanist';
-            --font-size-xs: 0.75rem;   /* 12px */
-            --font-size-sm: 0.875rem;  /* 14px */
-            --font-size-base: 1rem;    /* 16px */
-            --font-size-lg: 1.125rem;  /* 18px */
-            --font-size-xl: 1.25rem;   /* 20px */
-            --font-size-2xl: 1.5rem;   /* 24px */
-            --font-size-3xl: 1.875rem; /* 30px */
-            --font-size-4xl: 2.25rem;  /* 36px */
-            --font-size-5xl: 3rem;     /* 48px */
-            
-            /* Espaciado */
-            --spacing-1: 0.25rem;  /* 4px */
-            --spacing-2: 0.5rem;   /* 8px */
-            --spacing-3: 0.75rem;  /* 12px */
-            --spacing-4: 1rem;     /* 16px */
-            --spacing-5: 1.25rem;  /* 20px */
-            --spacing-6: 1.5rem;   /* 24px */
-            --spacing-8: 2rem;     /* 32px */
-            --spacing-10: 2.5rem;  /* 40px */
-            --spacing-12: 3rem;    /* 48px */
-            --spacing-16: 4rem;    /* 64px */
-            --spacing-20: 5rem;    /* 80px */
-            --spacing-24: 6rem;    /* 96px */
-            
-            /* Bordes */
-            --border-radius-sm: 0.125rem; /* 2px */
-            --border-radius: 0.25rem;     /* 4px */
-            --border-radius-md: 0.375rem; /* 6px */
-            --border-radius-lg: 0.5rem;   /* 8px */
-            --border-radius-xl: 0.75rem;  /* 12px */
-            --border-radius-2xl: 1rem;    /* 16px */
-            --border-radius-full: 9999px;
-            
-            /* Sombras */
-            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-            --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-            
-            /* Tamaños de contenedores */
-            --container-xs: 20rem;   /* 320px */
-            --container-sm: 24rem;   /* 384px */
-            --container-md: 28rem;   /* 448px */
-            --container-lg: 32rem;   /* 512px */
-            --container-xl: 36rem;   /* 576px */
-            --container-2xl: 42rem;  /* 672px */
-            --container-3xl: 48rem;  /* 768px */
-            --container-4xl: 56rem;  /* 896px */
-            --container-5xl: 64rem;  /* 1024px */
-            --container-6xl: 72rem;  /* 1152px */
-            --container-7xl: 80rem;  /* 1280px */
-            
-            /* Z-index */
-            --z-index-dropdown: 1000;
-            --z-index-sticky: 1020;
-            --z-index-fixed: 1030;
-            --z-index-modal: 1040;
-            --z-index-popover: 1050;
-            --z-index-tooltip: 1060;
-            
-            /* Breakpoints */
-            --breakpoint-sm: 640px;
-            --breakpoint-md: 768px;
-            --breakpoint-lg: 1024px;
-            --breakpoint-xl: 1280px;
-            --breakpoint-2xl: 1536px;
-        }
+    /* Colores principales actualizados */
+    --color-primary: #5aafff;
+    --color-primary-medium: #349dff;
+    --color-primary-dark: #014198;
+    --color-primary-light: #f0f4f7;
+    --color-secondary: #030c30; 
+    --color-accent: #0f67fd;
+    --color-light: #d9edff;
+
+    /* Escala de grises (dejamos las que ya tenías) */
+    --color-black: #000000;
+    --color-gray-900: #1a1a1a;
+    --color-gray-800: #333333;
+    --color-gray-700: #4d4d4d;
+    --color-gray-600: #666666;
+    --color-gray-500: #808080;
+    --color-gray-400: #999999;
+    --color-gray-300: #b3b3b3;
+    --color-gray-200: #cccccc;
+    --color-gray-100: #e6e6e6;
+    --color-white: #ffffff;
+
+    /* Colores de fondo */
+    --bg-primary: var(--color-white);
+    --bg-secondary: #f8f9fa;
+    --bg-dark: var(--color-gray-900);
+
+    /* Colores de texto */
+    --text-primary: var(--color-gray-900);
+    --text-secondary: var(--color-gray-700);
+    --text-light: var(--color-gray-600);
+    --text-inverse: var(--color-white);
+    --text-link: var(--color-primary);
+    --text-link-hover: var(--color-primary-dark);
+
+    /* Tipografía */
+    --font-primary: 'inter';
+    --font-heading: 'urbanist';
+
+    --bs-body-font-family: 'Inter', sans-serif;
+    --bs-heading-font-family: 'Urbanist', sans-serif;
+
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.125rem;
+    --font-size-xl: 1.25rem;
+    --font-size-2xl: 1.5rem;
+    --font-size-3xl: 1.875rem;
+    --font-size-4xl: 2.25rem;
+    --font-size-5xl: 3rem;
+    --font-size-6xl: 4rem;
+
+    /* Espaciado */
+    --spacing-1: 0.25rem;
+    --spacing-2: 0.5rem;
+    --spacing-3: 0.75rem;
+    --spacing-4: 1rem;
+    --spacing-5: 1.25rem;
+    --spacing-6: 1.5rem;
+    --spacing-8: 2rem;
+    --spacing-10: 2.5rem;
+    --spacing-12: 3rem;
+    --spacing-16: 4rem;
+    --spacing-20: 5rem;
+    --spacing-24: 6rem;
+
+    /* Bordes */
+    --border-radius-sm: 0.125rem;
+    --border-radius: 0.25rem;
+    --border-radius-md: 0.375rem;
+    --border-radius-lg: 0.5rem;
+    --border-radius-xl: 0.75rem;
+    --border-radius-2xl: 1rem;
+    --border-radius-full: 9999px;
+
+    /* Sombras */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+    /* Tamaños de contenedores */
+    --container-xs: 20rem;
+    --container-sm: 24rem;
+    --container-md: 28rem;
+    --container-lg: 32rem;
+    --container-xl: 36rem;
+    --container-2xl: 42rem;
+    --container-3xl: 48rem;
+    --container-4xl: 56rem;
+    --container-5xl: 64rem;
+    --container-6xl: 72rem;
+    --container-7xl: 80rem;
+
+    /* Z-index */
+    --z-index-dropdown: 1000;
+    --z-index-sticky: 1020;
+    --z-index-fixed: 1030;
+    --z-index-modal: 1040;
+    --z-index-popover: 1050;
+    --z-index-tooltip: 1060;
+
+    /* Breakpoints */
+    --breakpoint-sm: 640px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 1024px;
+    --breakpoint-xl: 1280px;
+    --breakpoint-2xl: 1536px;}
 
 
 *, *::after, *::before {
@@ -111,79 +117,223 @@
     box-sizing: border-box;
 }
 
-body {
-    display: flex;
-    flex-direction:  column;
-    font-family: var(--font-primary);
-    line-height: 1.6rem;
+/* --- Header inicio --- */
+
+.main-content-wrapper, .contacto-content-wrapper, .internas-content-wrapper{
+    background-size: cover;
+    background-position: center;
+}
+
+.main-content-wrapper {
+    height: 80vh;
+    background-image: url('../img/portada-inicio.jpg');
+}
+
+.contacto-content-wrapper{
+    background-image: url('../img/portada-contacto.jpg');
+}
+
+.internas-content-wrapper {
+    height: 35vh;
+    background-image: url('../img/portada-internas.jpg');
 }
 
 
-.title-principal {
-  display: flex;
-  align-content: center;
-  justify-content: center;
-  margin-top: 5rem;
-  font-size: var(--font-size-5xl);
-  font-family: var(--font-heading);
-  font-weight: 600;
+/* --- Barra navegacion --- */
+
+
+.nav-link {
+    background-color: rgba(255, 255, 255, 0.7) !important; 
+    color: var(--color-secondary) !important; 
+    margin-right: var(--spacing-2); 
+    transition: background-color 0.3s ease;
 }
 
 
-.menu-nav {
-    min-height: 100%;
-    height: 60rem;
-    margin-top: 5rem;
-    width: 20%;
-    background-color: var(--color-primary);
+.nav-link:hover {
+    color: var(--color-accent) !important; 
 }
 
 
-.container-list {
-    display: flex;
-    flex-direction: column;
-    list-style: none;
-    padding: 2rem;
+#navbarNav.collapsing {
+    transition: none !important; 
 }
 
-.element-list {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    list-style: none;
-    height: 2.2rem;
-    margin-top: .5rem;
-    margin-bottom: .5rem;
-    text-align: center;
-    background-color: var(--bg-primary);
-    font-family: urbanist;
+.navbar-nav.d-lg-none {
+    opacity: 0;
+    left: 50%;
+    transform: translate(-50%, -20px) !important; 
+}
+
+#navbarNav.collapse.show .navbar-nav.d-lg-none {
+    opacity: 1;
+    transform: translate(-50%, 0) !important; 
+    transition: opacity 0.2s ease-out, transform 0.3s ease-out; 
+}
+
+
+
+
+/* --- Botones y ctas --- */
+
+
+.blue-pill, .btn-primary{
+    background-color: var(--color-accent) !important; 
+    color: var(--color-white) !important; 
+    transition: background-color 0.3s ease;
+    border: 2px solid var(--color-primary) !important;
+}
+
+.blue-pill:hover, .btn-primary:hover, .btn-secondary:hover{
+    background-color: var(--color-primary-dark) !important; 
+}
+
+.navbar-collapse.show {
+    margin-top: var(--spacing-4);
+    border-radius: var(--border-radius-sm) !important;
+    z-index: 100;
+}
+
+.btn-primary:hover, .btn-secondary:hover{
+    transform: translateY(-3px);
+    transition: 0.2s ease;
+}
+
+.logo-responsive {
+    max-height: 35px; 
+}
+
+.btn-outline-primary{
+    color: var(--color-primary) !important;
+    border: 1px solid var(--color-primary) !important;
+}
+
+.btn-outline-primary:hover{
+    background-color: var(--color-primary) !important; 
+    color: var(--color-white) !important; 
+    transition: background-color 0.3s ease;
+}
+
+.btn-secondary {
+    background-color: var(--color-primary) !important;
+    border: 2px solid var(--color-primary-medium) !important;
+}
+
+
+/* --- Jerarquías texto --- */
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Urbanist', sans-serif;
+}
+
+h1, h2{
+    color: var(--color-primary-dark) !important;
+    font-weight: 200 !important;
+}
+
+p, a{
+    font-family: 'Inter', sans-serif;
+}
+ 
+h1 {
+    font-size: var(--font-size-6xl)!important;
+    line-height: 1.0;
+}
+
+
+h2{
+    font-size: var(--font-size-4xl);
+    font-family: var(--font-heading);
+    margin-bottom: var(--spacing-6);
+    line-height: 1.3;
+}
+
+h5{
+    color: var(--color-primary-dark)!important;
+}
+
+span{
+    font-weight: 600;
+    color: var(--color-accent) !important;
+}
+
+p{
     font-size: var(--font-size-lg);
-    border-radius: var(--border-radius-lg);
-    -webkit-border-radius: var(--border-radius-lg);
-    -moz-border-radius: var(--border-radius-lg);
-    -ms-border-radius: var(--border-radius-lg);
-    -o-border-radius: var(--border-radius-lg);
-    box-shadow: rgba(2,2,1,45%) inset;
-    a {
-       text-decoration: none;
-       color: var(--color-gray-900);
-    }
-    &:hover {
-     scale: 1.1;
-    }
+    font-weight: 300;
+    color: var(--color-gray-700);
+}
+
+li a{
+    text-decoration: none;
 }
 
 
-.container-footer {
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    margin-top: 2rem;
+/* --- Portadas header --- */
+
+
+.hero-content p {
+    font-size: var(--font-size-xl);
+
+}
+
+.hero-content-internas h1{
+ font-size: var(--font-size-5xl)!important;
 }
 
 
-.mark-copyrights {
-    font-family: urbanist;
-    font-size: var(--font-size-3xl);
-    font-weight: 400;
+/* --- Footer --- */
+
+
+.footer-wrapper {
+    background-color: var(--color-secondary);
 }
+
+footer p, .footer-links li a{
+    color: var(--color-gray-200);
+
+}
+
+footer h3{
+    color: var(--color-primary);
+    font-size: var(--font-size-xl);
+    font-family: var(--font-heading);
+    font-weight: 700;
+}
+
+.footer-links li a{
+    text-decoration: none;
+    line-height: 2;
+}
+
+
+/* --- profesionales --- */
+
+
+.card-gradient-bg{
+    background-image: linear-gradient(to bottom, white, var(--color-primary));
+}
+
+
+/* --- Institucional --- */
+
+
+.bg-color{
+    color: var(--color-primary-dark);
+    background-color: var(--color-light);
+    border: 2px solid var(--color-primary);
+    font-weight: 500;
+}
+
+
+/* --- Reserva turnos--- */
+
+.custom-input {
+    background-color: var(--color-primary-light) !important;
+    border: none !important;
+    color: var(--color-gray-800) !important;
+    padding: 15px !important;
+}
+
+
+
+
