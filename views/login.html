@@ -5,9 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Conoce a nuestros profesionales de la salud en IDW Centro Médico. Médicos especializados en diversas áreas, comprometidos con tu bienestar integral y atención de calidad en Argentina.">
+        content="Accede a tu cuenta en IDW Centro Médico. Gestiona tus turnos, consulta tu historial y mantén tu salud bajo control.">
     <link rel="icon" type="image/png" href="./img/favicon.png">
     <link rel="stylesheet" href="./styles/index.css">
+    <link rel="stylesheet" href="../styles/administrador.css"
     <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap"
@@ -21,7 +22,8 @@
         href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
     <link rel="icon" href="">
-    <title>Inicio | IDW Centro Médico</title>
+    <title>Iniciar Sesión | IDW Centro Médico</title>
+
 </head>
 
 <body>
@@ -31,8 +33,8 @@
             <nav class="navbar navbar-expand-lg navbar-light p-3">
                 <div class="container-fluid justify-content-between">
 
-                    <a class="navbar-brand" href="./index.html">
-                        <img src="./img/logo-idw.png" alt="IDW Logo" class="w-auto d-block logo-responsive">
+                    <a class="navbar-brand" href="../index.html">
+                        <img src="../img/logo-idw.png" alt="IDW Logo" class="w-auto d-block logo-responsive">
                     </a>
 
                     <button class="navbar-toggler bg-white rounded-3 p-2 shadow-sm" type="button"
@@ -46,17 +48,17 @@
                         <ul class="navbar-nav bg-white rounded-4 shadow-sm w-75 p-4 mt-5 d-lg-none position-absolute top-50 start-50 translate-middle-x"
                             aria-label="Menú de navegación móvil">
 
-                            <li class="nav-item text-center"><a class="nav-link mx-2" href="./index.html">Inicio</a>
+                            <li class="nav-item text-center"><a class="nav-link mx-2" href="../index.html">Inicio</a>
                             </li>
                             <li class="nav-item text-center"><a class="nav-link mx-2"
-                                    href="./views/institucional.html">Institucional</a></li>
+                                    href="../views/institucional.html">Institucional</a></li>
                             <li class="nav-item text-center"><a class="nav-link mx-2"
-                                    href="./views/profesionales.html">Profesionales</a></li>
+                                    href="../views/profesionales.html">Profesionales</a></li>
                             <li class="nav-item text-center"><a class="nav-link mx-2"
-                                    href="./views/contacto.html">Contacto</a></li>
+                                    href="../views/contacto.html">Contacto</a></li>
 
                             <li class="nav-item mt-3">
-                                <a class="btn btn-primary rounded-pill w-100 py-2" href="./views/turnos.html">Reserva tu
+                                <a class="btn btn-primary rounded-pill w-100 py-2" href="../views/turnos.html">Reserva tu
                                     turno</a>
                             </li>
                         </ul>
@@ -64,15 +66,15 @@
                         <ul class="navbar-nav bg-white rounded-5 shadow-sm d-none d-lg-flex flex-lg-row align-items-lg-center p-2"
                             aria-label="Menú de navegación desktop">
 
-                            <li class="nav-item"><a class="nav-link mx-2" href="./index.html">Inicio</a></li>
+                            <li class="nav-item"><a class="nav-link mx-2" href="../index.html">Inicio</a></li>
                             <li class="nav-item"><a class="nav-link mx-2"
-                                    href="./views/institucional.html">Institucional</a></li>
+                                    href="../views/institucional.html">Institucional</a></li>
                             <li class="nav-item"><a class="nav-link mx-2"
-                                    href="./views/profesionales.html">Profesionales</a></li>
-                            <li class="nav-item"><a class="nav-link mx-2" href="./views/contacto.html">Contacto</a></li>
+                                    href="../views/profesionales.html">Profesionales</a></li>
+                            <li class="nav-item"><a class="nav-link mx-2" href="../views/contacto.html">Contacto</a></li>
 
                             <li class="nav-item ms-3">
-                                <a class="btn btn-primary rounded-pill px-3 py-2" href="./views/turnos.html">Reserva tu
+                                <a class="btn btn-primary rounded-pill px-3 py-2" href="../views/turnos.html">Reserva tu
                                     turno</a>
                             </li>
                         </ul>
@@ -92,83 +94,48 @@
     </header>
     <main>
         <br>
-        <div class="obras-soc text-center my-5 container">
-            <h2><span>Obras sociales</span> y prepagas</h2>
+        <div class="login-section text-center my-5 container">
+            <h2>Accede a tu <span>cuenta</span></h2>
+            <p class="mb-5">Gestiona tus turnos, consulta tu historial y mantén tu salud bajo control</p>
 
-            <div class="row logos-obras-soc justify-content-center g-5 my-2 px-3">
-
-                <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                    <a href="https://www.apross.gov.ar/">
-                        <img src="./img/logo-apross.png" alt="logo-apross" class="img-fluid">
-                    </a>
+            <div class="login-container">
+                <h3 class="login-title">Iniciar Sesión</h3>
+                
+                <form id="loginForm">
+    <div class="mb-3">
+        <input type="email" class="form-control" id="email" 
+               placeholder="Correo electrónico" 
+               value="admin@idw.com" 
+               required>
+    </div>
+    <div class="mb-3">
+        <input type="password" class="form-control" id="password" 
+               placeholder="Contraseña" 
+               value="admin123" 
+               required>
+    </div>
+    
+    <div class="form-check mb-3">
+        <input class="form-check-input" type="checkbox" id="rememberMe" checked>
+        <label class="form-check-label" for="rememberMe">
+            Recordarme
+        </label>
+    </div>
+    
+    <button type="submit" class="btn btn-primary btn-login w-100">
+        Iniciar Sesión
+    </button>
+    
+    <div class="login-options mt-3">
+        <a href="#" class="text-decoration-none">¿Olvidaste tu contraseña?</a>
+        <a href="#" class="text-decoration-none ms-3">Ayuda</a>
+    </div>
+</form>
+                
+                
+                <div class="register-link">
+                    <p>¿No tienes una cuenta? <a href="#" class="text-decoration-none fw-bold">Regístrate aquí</a></p>
                 </div>
-
-                <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                    <a href="https://avalian.com/">
-                        <img src="./img/logo-avalian.png" alt="logo-avalian" class="img-fluid">
-                    </a>
-                </div>
-
-                <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                    <a href="https://www.galeno.com.ar/">
-                        <img src="./img/logo-galeno.png" alt="logo-galeno" class="img-fluid">
-                    </a>
-                </div>
-
-                <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                    <a href="https://jerarquicos.com/">
-                        <img src="./img/logo-jerarquicos.png" alt="logo-jerarquicos" class="img-fluid">
-                    </a>
-                </div>
-
-                <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                    <a href="https://www.medife.com.ar/">
-                        <img src="./img/logo-medife.png" alt="logo-medife" class="img-fluid">
-                    </a>
-                </div>
-
-                <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                    <a href="https://www.omint.com.ar/PlanDeSalud/">
-                        <img src="./img/logo-omint.png" alt="logo-omint" class="img-fluid">
-                    </a>
-                </div>
-
-                <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                    <a href="https://www.aomaosam.org.ar/osam/">
-                        <img src="./img/logo-osam.png" alt="logo-osam" class="img-fluid">
-                    </a>
-                </div>
-
-                <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                    <a href="https://www.osde.com.ar/">
-                        <img src="./img/logo-osde.png" alt="logo-osde" class="img-fluid">
-                    </a>
-                </div>
-
-                <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                    <a href="https://www.ospesalud.com.ar/">
-                        <img src="./img/logo-ospe.png" alt="logo-ospe" class="img-fluid">
-                    </a>
-                </div>
-
-                <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                    <a href="https://www.pami.org.ar/">
-                        <img src="./img/logo-pami.png" alt="logo-pami" class="img-fluid">
-                    </a>
-                </div>
-
-                <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                    <a href="https://www.sancorsalud.com.ar/">
-                        <img src="./img/logo-sancor-salud.png" alt="logo-sancor-salud" class="img-fluid">
-                    </a>
-                </div>
-
-                <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                    <a href="https://www.swissmedical.com.ar">
-                        <img src="./img/logo-swiss.png" alt="logo-swiss" class="img-fluid">
-                    </a>
-                </div>
-
             </div>
         </div>
     </main>
@@ -185,7 +152,6 @@
                     <p class="mt-4 col-12 col-lg-6">
                         Nuestro compromiso es tu bienestar integral, combinando tecnología y cuidado personalizado.
                     </p>
-
 
                     <div class="redes-sociales d-flex mt-4 gap-3">
 
@@ -213,7 +179,6 @@
                             <li><a href="./views/profesionales.html">Profesionales</a></li>
                             <li><a href="./views/contacto.html">Contacto</a></li>
                             <li><a href="./views/turnos.html">Reserva tu turno</a></li>
-                            <li><a href="./views/login.html">Ingresar al Sistema</a></li>
                         </ul>
                     </div>
 
@@ -239,6 +204,9 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+    </script>
+    <script src="../js/auth/auth.js">
+
     </script>
 </body>
 
