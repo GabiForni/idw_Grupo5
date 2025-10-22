@@ -25,12 +25,10 @@
 </head>
 
 <body>
-    <header>
-        <div class="main-content-wrapper d-flex flex-column m-3 rounded-4">
-
-            <nav class="navbar navbar-expand-lg navbar-light p-3">
+    <header class="w-100">
+        <div class="main-content-wrapper d-flex flex-column m-2 m-lg-3 rounded-4">
+            <nav class="navbar navbar-expand-lg navbar-light bg-white rounded-4 shadow-sm py-3 m-3">
                 <div class="container-fluid justify-content-between">
-
                     <a class="navbar-brand" href="./index.html">
                         <img src="./img/logo-idw.png" alt="IDW Logo" class="w-auto d-block logo-responsive">
                     </a>
@@ -41,51 +39,31 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
 
-                    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <div class="collapse navbar-collapse justify-content-end rounded-3" id="navbarNav">
+                        <ul class="navbar-nav gap-2 text-center text-lg-start" aria-label="Menú de navegación">
+                            
+                            <li class="nav-item"><a class="nav-link" href="./index.html">Inicio</a></li>
+                            <li class="nav-item"><a class="nav-link" href="./views/institucional.html">Institucional</a></li>
+                            <li class="nav-item"><a class="nav-link" href="./views/profesionales.html">Profesionales</a></li>
+                            <li class="nav-item"><a class="nav-link" href="./views/contacto.html">Contacto</a></li>
 
-                        <ul class="navbar-nav bg-white rounded-4 shadow-sm w-75 p-4 mt-5 d-lg-none position-absolute top-50 start-50 translate-middle-x"
-                            aria-label="Menú de navegación móvil">
-
-                            <li class="nav-item text-center"><a class="nav-link mx-2" href="./index.html">Inicio</a>
+                            <li class="nav-item">
+                                <a class="btn btn-primary rounded-pill px-3 py-2 w-lg-auto" href="./views/turnos.html">Reserva tu turno</a>
                             </li>
-                            <li class="nav-item text-center"><a class="nav-link mx-2"
-                                    href="./views/institucional.html">Institucional</a></li>
-                            <li class="nav-item text-center"><a class="nav-link mx-2"
-                                    href="./views/profesionales.html">Profesionales</a></li>
-                            <li class="nav-item text-center"><a class="nav-link mx-2"
-                                    href="./views/contacto.html">Contacto</a></li>
 
-                            <li class="nav-item mt-3">
-                                <a class="btn btn-primary rounded-pill w-100 py-2" href="./views/turnos.html">Reserva tu
-                                    turno</a>
-                            </li>
-                        </ul>
-
-                        <ul class="navbar-nav bg-white rounded-5 shadow-sm d-none d-lg-flex flex-lg-row align-items-lg-center p-2"
-                            aria-label="Menú de navegación desktop">
-
-                            <li class="nav-item"><a class="nav-link mx-2" href="./index.html">Inicio</a></li>
-                            <li class="nav-item"><a class="nav-link mx-2"
-                                    href="./views/institucional.html">Institucional</a></li>
-                            <li class="nav-item"><a class="nav-link mx-2"
-                                    href="./views/profesionales.html">Profesionales</a></li>
-                            <li class="nav-item"><a class="nav-link mx-2" href="./views/contacto.html">Contacto</a></li>
-
-                            <li class="nav-item ms-3">
-                                <a class="btn btn-primary rounded-pill px-3 py-2" href="./views/turnos.html">Reserva tu
-                                    turno</a>
+                            <li class="nav-item">
+                                <a class="btn btn-outline-primary rounded-pill px-3 py-2 w-lg-auto" href="./views/login.html">Iniciar Sesión</a>
                             </li>
                         </ul>
                     </div>
                 </div>
             </nav>
 
-            <div class="hero-content text-center m-auto col-12 col-md-8 col-lg-6 px-3 py-5">
+            <div class="hero-content text-center m-auto col-12 col-md-10 col-xl-6 px-2 py-4">
                 <h1>Tu salud es <span>nuestra prioridad</span></h1>
-                <p class="mx-auto my-4 fs-5 fw-normal">Bienvenido al Centro Médico IDW, más de 50 años combinando
+                <p class="mx-auto my-4 fw-normal">Bienvenido al Centro Médico IDW, más de 50 años combinando
                     experiencia y innovación para brindarte una atención de primera calidad.</p>
-                <a href="./views/institucional.html" class="btn btn-primary btn-lg rounded-pill px-4 py-2 my-4">Conocer
-                    más</a>
+                <a href="./views/institucional.html" class="btn btn-primary btn-lg rounded-pill px-4 py-2 my-4">Conocer más</a>
             </div>
 
         </div>
@@ -173,7 +151,7 @@
         </div>
     </main>
     <footer class="main-footer w-100 d-flex justify-content-center text-light mt-4">
-        <div class="container-fluid footer-wrapper d-flex flex-column m-3 rounded-5 p-5">
+        <div class="container-fluid footer-wrapper d-flex flex-column m-2 m-lg-3 rounded-5 p-5">
 
             <div class="footer-content-columnas row g-5">
 
@@ -213,6 +191,7 @@
                             <li><a href="./views/profesionales.html">Profesionales</a></li>
                             <li><a href="./views/contacto.html">Contacto</a></li>
                             <li><a href="./views/turnos.html">Reserva tu turno</a></li>
+                            <li><a href="./views/login.html">Ingresar al Sistema</a></li>
                         </ul>
                     </div>
 
