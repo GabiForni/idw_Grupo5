@@ -374,4 +374,26 @@ footer h3{
 
 
 
-
+/*--- registro ---*/
+.form-control:focus {
+            border-color: #0d6efd;
+            box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+        }
+        
+        .btn-primary {
+            background-color: #0d6efd;
+            border-color: #0d6efd;
+        }
+        
+        .btn-primary:hover {
+            background-color: #0b5ed7;
+            border-color: #0a58ca;
+        }
+        
+        .titulo-admin span {
+            color: #0d6efd;
+        }
+        
+        .login-container {
+            max-width: 500px;
+        }

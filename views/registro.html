@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Conoce a nuestros profesionales de la salud en IDW Centro Médico. Médicos especializados en diversas áreas, comprometidos con tu bienestar integral y atención de calidad en Argentina.">
+        content="Regístrate en IDW Centro Médico. Crea tu cuenta para acceder a nuestros servicios médicos, gestionar turnos y mantener tu salud bajo control.">
     <link rel="icon" type="image/png" href="../img/favicon.png">
     <link rel="stylesheet" href="../styles/index.css">
     <link rel="stylesheet" href="../styles/administrador.css">
@@ -22,7 +22,7 @@
         href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
     <link rel="icon" href="">
-    <title>Iniciar Sesión | IDW Centro Médico</title>
+    <title>Registro | IDW Centro Médico</title>
 </head>
 
 <body>
@@ -64,45 +64,82 @@
             <div class="hero-content m-auto pb-5 mt-5">
                 <div class="login-section container d-flex flex-column align-items-center p-4">
                     <div class="text-center">
-                        <h1 class="titulo-admin">Accede a tu <span>cuenta</span></h1>
-                        <p class="mb-5">Gestiona tus turnos, consulta tu historial y mantén tu salud bajo control</p>
+                        <h1 class="titulo-admin">Crea tu <span>cuenta</span></h1>
+                        <p class="mb-5">Regístrate para acceder a nuestros servicios médicos y gestionar tu salud</p>
                     </div>
 
-                    <div class="login-container bg-white rounded-4 p-4 shadow w-lg-50 w-100 col-12 col-lg-4">
+                    <div class="login-container bg-white rounded-4 p-4 shadow w-lg-50 w-100 col-12 col-lg-6">
                         
-                        <form id="loginForm">
-                            <h3 class="mb-4">Iniciar sesión</h3>
+                        <form id="registerForm">
+                            <h3 class="mb-4">Registro de usuario</h3>
+                            
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" id="nombre" 
+                                        placeholder="Nombre" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" id="apellido" 
+                                        placeholder="Apellido" required>
+                                </div>
+                            </div>
+                            
                             <div class="mb-3">
                                 <input type="email" class="form-control" id="email" 
-                                    placeholder="Correo electrónico" 
-                                    value="admin@idw.com" 
-                                    required>
+                                    placeholder="Correo electrónico" required>
                             </div>
+                            
+                            <div class="mb-3">
+                                <input type="tel" class="form-control" id="telefono" 
+                                    placeholder="Teléfono">
+                            </div>
+                            
+                            <div class="mb-3">
+                                <input type="date" class="form-control" id="fechaNacimiento" 
+                                    placeholder="Fecha de nacimiento">
+                            </div>
+                            
+                            <div class="mb-3">
+                                <select class="form-select" id="genero">
+                                    <option value="" selected disabled>Selecciona tu género</option>
+                                    <option value="masculino">Masculino</option>
+                                    <option value="femenino">Femenino</option>
+                                    <option value="otro">Otro</option>
+                                    <option value="prefiero-no-decir">Prefiero no decir</option>
+                                </select>
+                            </div>
+                            
                             <div class="mb-3">
                                 <input type="password" class="form-control" id="clave" 
-                                    placeholder="Contraseña" 
-                                    value="admin123" 
-                                    required>
+                                    placeholder="Contraseña" required>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <input type="password" class="form-control" id="confirmarClave" 
+                                    placeholder="Confirmar contraseña" required>
                             </div>
                             
                             <div class="form-check mb-3">
-                                <input class="form-check-input" type="checkbox" id="rememberMe" checked>
-                                <label class="form-check-label" for="rememberMe">
-                                    Recordarme
+                                <input class="form-check-input" type="checkbox" id="terminos" required>
+                                <label class="form-check-label" for="terminos">
+                                    Acepto los <a href="#" class="text-decoration-none">Términos y Condiciones</a> y la <a href="#" class="text-decoration-none">Política de Privacidad</a>
+                                </label>
+                            </div>
+                            
+                            <div class="form-check mb-3">
+                                <input class="form-check-input" type="checkbox" id="newsletter">
+                                <label class="form-check-label" for="newsletter">
+                                    Deseo recibir información sobre novedades y promociones
                                 </label>
                             </div>
                                                         
-                            <div class="login-options my-3">
-                                <a href="#" class="text-decoration-none ms-2">¿Olvidaste tu contraseña?</a>
-                            </div>
-
                             <button type="submit" class="btn btn-primary btn-login rounded-pill w-100">
-                                Iniciar Sesión
+                                Crear Cuenta
                             </button>
                         </form>
                             
                         <div class="register-link mt-4">
-                            <p class="fs-6">¿No tienes una cuenta? <a href="../views/registro.html" class="text-decoration-none fw-bold">Regístrate aquí</a></p>
+                            <p class="fs-6">¿Ya tienes una cuenta? <a href="../views/login.html" class="text-decoration-none fw-bold">Inicia sesión aquí</a></p>
                         </div>
                     </div>
                 </div>
@@ -172,10 +209,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-    </script>
-    <script src="../js/usuarios.js"></script>
-    <script src="../js/login.js"></script>
-
     </script>
 </body>
 
