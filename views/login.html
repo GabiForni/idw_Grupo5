@@ -4,28 +4,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Conoce a nuestros profesionales de la salud en IDW Centro Médico. Médicos especializados en diversas áreas, comprometidos con tu bienestar integral y atención de calidad en Argentina.">
     <link rel="icon" type="image/png" href="../img/favicon.png">
-    <link rel="stylesheet" href="../styles/index.css"> 
-    <link rel="stylesheet" href="../styles/internas.css"> 
+    <link rel="stylesheet" href="../styles/index.css">
+    <link rel="stylesheet" href="../styles/administrador.css">
     <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
-    <link rel="icon" href="">    
-    <title>Institucional</title>
+    <link rel="icon" href="">
+    <title>Iniciar Sesión | IDW Centro Médico</title>
 </head>
+
 <body>
-    <header class="w-100">
-        <div class="internas-content-wrapper d-flex flex-column m-2 m-lg-3 rounded-4">
-            <nav class="navbar navbar-expand-lg navbar-light bg-white rounded-4 shadow-sm py-3 m-3">
+    <header>
+        <div class="d-flex flex-column m-3 rounded-4">
+            <nav class="navbar navbar-expand-lg navbar-light bg-white rounded-4 rounded-lg-pill shadow-sm p-3 m-3">
                 <div class="container-fluid justify-content-between">
+
                     <a class="navbar-brand" href="../index.html">
                         <img src="../img/logo-idw.png" alt="IDW Logo" class="w-auto d-block logo-responsive">
                     </a>
@@ -37,7 +42,7 @@
                     </button>
 
                     <div class="collapse navbar-collapse justify-content-end rounded-3" id="navbarNav">
-                        <ul class="navbar-nav gap-2 text-center text-lg-start" aria-label="Menú de navegación">
+                        <ul class="navbar-nav gap-2 gap-lg-3 text-center text-lg-start" aria-label="Menú de navegación">
                             
                             <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
                             <li class="nav-item"><a class="nav-link" href="../views/institucional.html">Institucional</a></li>
@@ -45,57 +50,67 @@
                             <li class="nav-item"><a class="nav-link" href="../views/contacto.html">Contacto</a></li>
 
                             <li class="nav-item">
-                                <a class="btn btn-primary rounded-pill px-3 py-2 w-lg-auto" href="../views/turnos.html">Reserva tu turno</a>
+                                <a class="btn btn-primary rounded-pill px-3 py-2 w-100 w-lg-auto" href="../views/turnos.html">Reserva tu turno</a>
                             </li>
 
                             <li class="nav-item">
-                                <a class="btn btn-outline-primary rounded-pill px-3 py-2 w-lg-auto" href="../views/login.html">Iniciar Sesión</a>
+                                <a class="btn btn-outline-primary rounded-pill px-3 py-2 w-100 w-lg-auto" href="../views/login.html"><i class="bi bi-person me-2"></i>Iniciar Sesión</a>
                             </li>
                         </ul>
                     </div>
                 </div>
             </nav>
 
-            <div class="hero-content-internas text-center m-auto col-12 col-md-9 col-lg-6 px-2"> 
-                <h1>Sobre <span>nosotros</span></h1>
+            <div class="hero-content m-auto pb-5 mt-5">
+                <div class="login-section container d-flex flex-column align-items-center p-4">
+                    <div class="text-center">
+                        <h1 class="titulo-admin">Accede a tu <span>cuenta</span></h1>
+                        <p class="mb-5">Gestiona tus turnos, consulta tu historial y mantén tu salud bajo control</p>
+                    </div>
+
+                    <div class="login-container bg-white rounded-4 p-4 shadow w-lg-50 w-100 col-12 col-lg-4">
+                        
+                        <form id="loginForm">
+                            <h3 class="mb-4">Iniciar sesión</h3>
+                            <div class="mb-3">
+                                <input type="email" class="form-control" id="email" 
+                                    placeholder="Correo electrónico" 
+                                    value="admin@idw.com" 
+                                    required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="password" class="form-control" id="clave" 
+                                    placeholder="Contraseña" 
+                                    value="admin123" 
+                                    required>
+                            </div>
+                            
+                            <div class="form-check mb-3">
+                                <input class="form-check-input" type="checkbox" id="rememberMe" checked>
+                                <label class="form-check-label" for="rememberMe">
+                                    Recordarme
+                                </label>
+                            </div>
+                                                        
+                            <div class="login-options my-3">
+                                <a href="#" class="text-decoration-none ms-2">¿Olvidaste tu contraseña?</a>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-login rounded-pill w-100">
+                                Iniciar Sesión
+                            </button>
+                        </form>
+                            
+                        <div class="register-link mt-4">
+                            <p class="fs-6">¿No tienes una cuenta? <a href="#" class="text-decoration-none fw-bold">Regístrate aquí</a></p>
+                        </div>
+                    </div>
+                </div>
             </div>
 
         </div>
     </header>
-    <main>
-        <div class="container my-5"> 
-            <div class="row align-items-center g-5 p-4"> 
-                <div class="col-12  col-lg-6"> 
-                    <div class="institucional-img">
-                        <img src="../img/institucional.jpg" 
-                            alt="Personal médico e instalaciones de la institución" 
-                            class="w-100 rounded-5 shadow">
-                    </div>
-                </div>
 
-                <div class="col-12 col-lg-6"> 
-                    <div class="institucional-info">
-                        <h2 class="mb-4"><span>Nuestra Misión:</span> Cuidarte Hoy, para un Mañana Saludable</h2>
-                        <p>
-                            Somos una institución especializada en medicina integral desde hace ya más de 20 años.
-                            Contamos con profesionales altamente comprometidos con la evolución y capacitación permanente, con
-                            el objetivo de brindar la mejor atención a nuestros pacientes. 
-                        </p> 
-                        <p>
-                            También contamos con equipamiento de última generación, habitaciones privadas, servicios de guardias para adultos, niños y departamentos avocados exclusivamente a cada especialidad.
-                        </p> 
-                    </div>
-                </div>
-            </div> 
-        </div>
-
-        <div class="col-12 col-lg-8 text-center mx-auto">
-            <p class="fs-5 bg-color my-3 mx-3 p-4 rounded-4 shadow-sm">
-                Confiamos en que nuestra página nos brinde una mayor cercanía con nuestros pacientes y les permita conocernos, estar al día con las novedades y poner a disposición todas las conexiones con nuestros centros de atención.
-            </p>
-        </div>
-
-    </main>
     <footer class="main-footer w-100 d-flex justify-content-center text-light mt-5">
         <div class="container-fluid footer-wrapper d-flex flex-column m-2 m-lg-3 rounded-5 p-5">  
             
@@ -108,7 +123,6 @@
                     <p class="mt-4 col-12 col-lg-6">
                         Nuestro compromiso es tu bienestar integral, combinando tecnología y cuidado personalizado.
                     </p>
-                    
                     
                     <div class="redes-sociales d-flex mt-4 gap-3"> 
                         
@@ -155,6 +169,14 @@
 
         </div>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+    </script>
+    <script src="../js/usuarios.js"></script>
+    <script src="../js/login.js"></script>
+
+    </script>
 </body>
+
 </html>
