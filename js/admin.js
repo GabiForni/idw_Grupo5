@@ -1,6 +1,5 @@
 // Pendiente aplicar img con base64
 
-
 // Inicializar datos
 const inicializarMedicos = () => {
     if (!localStorage.getItem('medicosStorage')) {
@@ -28,6 +27,66 @@ let imagenSeleccionada = null;
 function notificarCambios() {
     const event = new Event('storage');
     window.dispatchEvent(event);
+}
+
+// Validaciones
+function validarNombre(nombre) {
+    const regex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\s]+$/;
+    return regex.test(nombre) && nombre.length >= 2 && nombre.length <= 50;
+}
+
+function validarApellido(apellido) {
+    const regex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\s]+$/;
+    return regex.test(apellido) && apellido.length >= 2 && apellido.length <= 50;
+}
+
+function validarEspecialidad(especialidad) {
+    const regex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\s\-]+$/;
+    return regex.test(especialidad) && especialidad.length >= 3 && especialidad.length <= 50;
+}
+
+function validarMatricula(matricula) {
+    const regex = /^\d{4}$/;
+    return regex.test(matricula);
+}
+
+function validarObrasSociales(obrasSociales) {    
+    const obrasArray = obrasSociales.split(',').map(obra => obra.trim());
+    
+    for (let obra of obrasArray) {
+        if (obra === '') continue;
+        const regex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\s\-&.]+$/;
+        if (!regex.test(obra) || obra.length > 50) {
+            return false;
+        }
+    }
+    return true;
+}
+
+function mostrarError(campo, mensaje) {
+    const errorExistente = document.getElementById(`error-${campo}`);
+    if (errorExistente) {
+        errorExistente.remove();
+    }
+    
+    const input = document.getElementById(campo);
+    const errorDiv = document.createElement('div');
+    errorDiv.id = `error-${campo}`;
+    errorDiv.className = 'text-danger mt-1 small';
+    errorDiv.textContent = mensaje;
+    
+    input.parentNode.appendChild(errorDiv);
+    input.classList.add('is-invalid');
+}
+
+function limpiarError(campo) {
+    const errorExistente = document.getElementById(`error-${campo}`);
+    if (errorExistente) {
+        errorExistente.remove();
+    }
+    
+    const input = document.getElementById(campo);
+    input.classList.remove('is-invalid');
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -60,6 +119,73 @@ document.addEventListener("DOMContentLoaded", () => {
         formMedico.addEventListener("submit", (e) => {
             e.preventDefault();
             guardarMedico();
+        });
+    }
+
+    // Validación en tiempo real
+    const nombreInput = document.getElementById("nombreMedico");
+    const apellidoInput = document.getElementById("nombreApellido");
+    const especialidadInput = document.getElementById("especialidad");
+    const matriculaInput = document.getElementById("matriculaMedico");
+    const obrasSocialesInput = document.getElementById("obrasSociales");
+
+    if (nombreInput) {
+        nombreInput.addEventListener('blur', () => {
+            const valor = nombreInput.value.trim();
+            if (!validarNombre(valor)) {
+                mostrarError('nombreMedico', 'El nombre debe contener solo letras y tener entre 2 y 50 caracteres');
+            } else {
+                limpiarError('nombreMedico');
+            }
+        });
+    }
+
+    if (apellidoInput) {
+        apellidoInput.addEventListener('blur', () => {
+            const valor = apellidoInput.value.trim();
+            if (!validarApellido(valor)) {
+                mostrarError('nombreApellido', 'El apellido debe contener solo letras y tener entre 2 y 50 caracteres');
+            } else {
+                limpiarError('nombreApellido');
+            }
+        });
+    }
+
+    if (especialidadInput) {
+        especialidadInput.addEventListener('blur', () => {
+            const valor = especialidadInput.value.trim();
+            if (!validarEspecialidad(valor)) {
+                mostrarError('especialidad', 'La especialidad debe contener solo letras y tener entre 3 y 50 caracteres');
+            } else {
+                limpiarError('especialidad');
+            }
+        });
+    }
+
+    if (matriculaInput) {
+        matriculaInput.addEventListener('blur', () => {
+            const valor = matriculaInput.value.trim();
+            if (!validarMatricula(valor)) {
+                mostrarError('matriculaMedico', 'La matrícula debe contener solo números (máximo 4 dígitos)');
+            } else {
+                limpiarError('matriculaMedico');
+            }
+        });
+
+        // Prevenir entrada de caracteres no numéricos
+        matriculaInput.addEventListener('input', () => {
+            matriculaInput.value = matriculaInput.value.replace(/[^\d]/g, '');
+        });
+    }
+
+    if (obrasSocialesInput) {
+        obrasSocialesInput.addEventListener('blur', () => {
+            const valor = obrasSocialesInput.value.trim();
+            if (!validarObrasSociales(valor)) {
+                mostrarError('obrasSociales', 'Las obras sociales deben ser texto separado por comas (máximo 50 caracteres cada una)');
+            } else {
+                limpiarError('obrasSociales');
+            }
         });
     }
 
@@ -144,6 +270,53 @@ function guardarMedico() {
     const obrasSociales = document.getElementById("obrasSociales").value.trim();
 
     // Validaciones de formulario
+    let formularioValido = true;
+
+    // Validar nombre
+    if (!validarNombre(nombre)) {
+        mostrarError('nombreMedico', 'El nombre debe contener solo letras y tener entre 2 y 50 caracteres');
+        formularioValido = false;
+    } else {
+        limpiarError('nombreMedico');
+    }
+
+    // Validar apellido
+    if (!validarApellido(apellido)) {
+        mostrarError('nombreApellido', 'El apellido debe contener solo letras y tener entre 2 y 50 caracteres');
+        formularioValido = false;
+    } else {
+        limpiarError('nombreApellido');
+    }
+
+    // Validar especialidad
+    if (!validarEspecialidad(especialidad)) {
+        mostrarError('especialidad', 'La especialidad debe contener solo letras y tener entre 3 y 50 caracteres');
+        formularioValido = false;
+    } else {
+        limpiarError('especialidad');
+    }
+
+    // Validar matrícula
+    if (!validarMatricula(matricula)) {
+        mostrarError('matriculaMedico', 'La matrícula debe contener solo números (máximo 4 dígitos)');
+        formularioValido = false;
+    } else {
+        limpiarError('matriculaMedico');
+    }
+
+    // Validar obras sociales
+    if (!validarObrasSociales(obrasSociales)) {
+        mostrarError('obrasSociales', 'Las obras sociales deben ser texto separado por comas (máximo 50 caracteres cada una)');
+        formularioValido = false;
+    } else {
+        limpiarError('obrasSociales');
+    }
+
+    if (!formularioValido) {
+        alert('⚠️ Por favor, corregí los errores en el formulario antes de continuar.');
+        return;
+    }
+
     if (!nombre || !apellido || !especialidad || !matricula) {
         alert('⚠️ Por favor, completá todos los campos obligatorios.');
         return;
@@ -200,13 +373,19 @@ function editarMedico(id) {
         document.getElementById("matriculaMedico").value = medico.matricula;
         document.getElementById("obrasSociales").value = medico.obrasSociales ? medico.obrasSociales.join(', ') : '';
         
+        // Limpiar errores al editar
+        limpiarError('nombreMedico');
+        limpiarError('nombreApellido');
+        limpiarError('especialidad');
+        limpiarError('matriculaMedico');
+        limpiarError('obrasSociales');
+        
         medicoEditando = id;
         document.querySelector('button[type="submit"]').innerHTML = '<i class="bi bi-check"></i> Actualizar';
         
         document.getElementById("nombreMedico").focus();
     }
 }
-
 
 // Eliminar médico
 function eliminarMedico(id) {
@@ -229,6 +408,13 @@ function resetForm() {
         preview.classList.add('d-none');
     }
     document.querySelector('button[type="submit"]').innerHTML = '<i class="bi bi-plus"></i> Agregar';
+    
+    // Limpiar todos los errores
+    limpiarError('nombreMedico');
+    limpiarError('nombreApellido');
+    limpiarError('especialidad');
+    limpiarError('matriculaMedico');
+    limpiarError('obrasSociales');
 }
 
 // Funciones globales
