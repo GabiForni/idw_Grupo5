@@ -226,7 +226,7 @@
 }
 
 
-.btn-success{
+.btn-success, .disponible{
     background-color: #11ab80 !important;
     border: 2px solid #38dcae !important;
 
@@ -362,6 +362,11 @@ footer h3{
     border: none !important;
     color: var(--color-gray-800) !important;
     padding: 15px !important;
+}
+
+.resumen-cartel{
+    background-color: #fcfcfc !important;
+    border: 2px solid var(--color-primary)!important;
 }
 
 

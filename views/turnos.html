@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="../img/favicon.png">
     <link rel="stylesheet" href="../styles/index.css"> 
-    <link rel="stylesheet" href="../styles/internas.css"> 
     <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap"rel="stylesheet">
@@ -69,42 +68,137 @@
                 <p>Elegí la fecha que prefieras y pedí turno sin necesidad de llamar. Es fácil, cómodo y muy rápido.</p>
             </div>
 
-            <div class="col-12 col-md-8 col-lg-5 mx-auto"> 
-                <form class="p-4 bg-white rounded-4 shadow-lg" name="turno">
-                    <div class="mb-3">
-                        <label for="ua" class="form-label fw-normal text-secondary">Unidad en la que desea atenderse:</label>
-                        <select id="ua" class="form-select custom-input">
-                            <option label="--Seleccione--" selected></option>
-                            <option value="1">Clínica Pediátrica</option>
-                            <option value="2">Clínica Oftalmológica</option>
-                            <option value="3">Clínica Traumatológica</option>
-                            <option value="4">Clínica Cardiológica</option>
-                        </select>
-                    </div>
-                
-                    <div class="mb-3">
-                        <label class="form-label fw-normal text-secondary">Ingrese sus datos por favor:</label>
-                        <div class="input-group gap-2">
-                            <select class="form-select custom-input rounded-2" style="max-width: 120px;">
-                                <option value="5">DNI</option>
-                                <option value="6">LE</option>
-                                <option value="7">LC</option>
+            <div class="col-12 col-md-8 col-lg-6 mx-auto">
+                <form class="p-4 bg-white rounded-4 shadow-lg" id="formTurnoPaciente" name="turno">
+                    <!-- Fila 1: Especialidad y Médico -->
+                    <div class="row g-3 mb-4">
+                        <div class="col-md-6">
+                            <label for="especialidad" class="form-label fw-semibold text-secondary">Especialidad:</label>
+                            <select id="especialidad" class="form-select custom-input" required>
+                                <option value="">-- Seleccione especialidad --</option>
                             </select>
-                            <input type="text" id="dni" class="form-control custom-input rounded-2" placeholder="--Ingrese--" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="medico" class="form-label fw-semibold text-secondary">Médico:</label>
+                            <select id="medico" class="form-select custom-input" required disabled>
+                                <option value="">-- Seleccione médico --</option>
+                            </select>
                         </div>
                     </div>
-                
-                    <div class="mb-3">
-                        <label for="fechaNacimiento" class="form-label fw-normal text-secondary">Fecha de nacimiento:</label>
-                        <input type="date" id="fechaNacimiento" class="form-control custom-input" required>
+
+                    <!-- Info del Médico (SOLO VALOR) -->
+                    <div class="mb-4" id="infoMedicoContainer" style="display: none;">
+                        <div class="d-flex align-items-center gap-3 p-3 bg-light rounded-3">
+                            <div class="flex-grow-1">
+                                <div class="d-flex align-items-center gap-2">
+                                    <span class="fw-semibold text-secondary">Valor consulta:</span>
+                                    <span class="text-success fw-bold">$<span id="medicoValor">0</span></span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                
-                    <div class="mb-4">
-                        <label for="fechaTurno" class="form-label fw-normal text-secondary">Seleccione una fecha</label>
-                        <input type="date" id="fechaTurno" class="form-control custom-input" required>
+
+                    <!-- Fila 2: Fecha y Horario -->
+                    <div class="row g-3 mb-4">
+                        <div class="col-md-6">
+                            <label for="fechaDisponible" class="form-label fw-semibold text-secondary">Fecha disponible:</label>
+                            <select id="fechaDisponible" class="form-select custom-input" required disabled>
+                                <option value="">-- Seleccione fecha --</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <div id="horarioContainer">
+                                <label for="horarioDisponible" class="form-label fw-semibold text-secondary">Horario disponible:</label>
+                                <select id="horarioDisponible" class="form-select custom-input" required disabled>
+                                    <option value="">-- Seleccione horario --</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
-                
-                    <button type="submit" class="btn btn-secondary btn-lg rounded-pill p-2 my-3 w-100">
+
+                    <h3 class="mt-5">Datos personales</h3>
+                    <!-- Fila 3: Documento compacto -->
+                    <div class="row g-3 my-3">
+                        <div class="col-2">
+                            <label class="form-label fw-semibold text-secondary">Doc:</label>
+                            <select class="form-select custom-input" id="tipoDocumento" required>
+                                <option value="DNI">DNI</option>
+                                <option value="LE">LE</option>
+                                <option value="LC">LC</option>
+                            </select>
+                        </div>
+                        <div class="col-4">
+                            <label class="form-label fw-semibold text-secondary">&nbsp;</label>
+                            <input type="text" id="documento" class="form-control custom-input" placeholder="Número" required>
+                        </div>
+                        <div class="col-6">
+                            <label class="form-label fw-semibold text-secondary">Nombre completo:</label>
+                            <input type="text" id="nombreCompleto" class="form-control custom-input" placeholder="Apellido y Nombre" required>
+                        </div>
+                    </div>
+
+                    <!-- Fila 4: Fecha Nacimiento y Obra Social -->
+                    <div class="row g-3 mb-4">
+                        <div class="col-md-6">
+                            <label for="fechaNacimiento" class="form-label fw-semibold text-secondary">Fecha de nacimiento:</label>
+                            <input type="date" id="fechaNacimiento" class="form-control custom-input" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="obraSocial" class="form-label fw-semibold text-secondary">Obra social:</label>
+                            <select id="obraSocial" class="form-select custom-input" required>
+                                <option value="">-- Seleccione obra social --</option>
+                                <option value="0">Particular (sin obra social)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Resumen Final (oculto inicialmente) -->
+                    <div class="mb-4" id="resumenFinal" style="display: none;">
+                        <div class="alert resumen-cartel rounded-4">
+                            <h5 class="alert-heading">Resumen de tu turno:</h6>
+                            <hr>
+                            <div class="small">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <strong>Médico:</strong><br>
+                                        <span id="resumenMedico"></span>
+                                    </div>
+                                    <div class="col-6">
+                                        <strong>Especialidad:</strong><br>
+                                        <span id="resumenEspecialidad"></span>
+                                    </div>
+                                </div>
+                                <div class="row mt-2">
+                                    <div class="col-6">
+                                        <strong>Fecha:</strong><br>
+                                        <span id="resumenFecha"></span>
+                                    </div>
+                                    <div class="col-6">
+                                        <strong>Horario:</strong><br>
+                                        <span id="resumenHorario"></span>
+                                    </div>
+                                </div>
+                                <div class="row mt-2">
+                                    <div class="col-6">
+                                        <strong>Paciente:</strong><br>
+                                        <span id="resumenPaciente"></span>
+                                    </div>
+                                    <div class="col-6">
+                                        <strong>Obra social:</strong><br>
+                                        <span id="resumenObraSocial"></span>
+                                    </div>
+                                </div>
+                                <div class="row mt-2">
+                                    <div class="col-12">
+                                        <strong>Total a pagar:</strong><br>
+                                        <span id="resumenTotal" class="fw-bold fs-5"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Botón Confirmar -->
+                    <button type="submit" class="btn btn-secondary btn-lg rounded-pill p-2 my-3 w-100" disabled id="btnConfirmar">
                         Confirmar cita
                     </button>
                 </form>
@@ -171,6 +265,12 @@
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <!--<script src="../js/turnos.js"></script>-->
+    <script src="../js/gestionDatos.js"></script>
+    <script src="../js/medicos.js"></script>
+    <script src="../js/especialidades.js"></script>
+    <script src="../js/obrasSociales.js"></script>
+    <script src="../js/turnos.js"></script>
+    <script src="../js/reservas.js"></script>
+
 </body>
 </html>
