@@ -385,7 +385,7 @@ function guardarEspecialidad(e) {
     const nombre = nombreInput.value.trim();
     
     if (!nombre) {
-        alert('⚠️ Por favor, ingresá el nombre de la especialidad.');
+        toastSystem.showError('⚠️ Por favor, ingresá el nombre de la especialidad.');
         return;
     }
     
@@ -396,7 +396,7 @@ function guardarEspecialidad(e) {
         const index = especialidades.findIndex(esp => esp.id === especialidadEditando);
         if (index !== -1) {
             especialidades[index].nombre = nombre;
-            alert('✅ Especialidad actualizada correctamente.');
+            toastSystem.showSuccess('✅ Especialidad actualizada correctamente.');
         }
         especialidadEditando = null;
         document.querySelector('#formEspecialidad button[type="submit"]').innerHTML = '<i class="bi bi-plus"></i> Agregar Especialidad';
@@ -407,7 +407,7 @@ function guardarEspecialidad(e) {
             id: nuevoId,
             nombre: nombre
         });
-        alert(`✅ Especialidad "${nombre}" agregada correctamente.`);
+        toastSystem.showSuccess(`✅ Especialidad "${nombre}" agregada correctamente.`);
     }
     
     guardarEspecialidades(especialidades);
@@ -438,7 +438,7 @@ function eliminarEspecialidad(id) {
         const medicosConEspecialidad = medicos.filter(medico => medico.especialidad === id);
         
         if (medicosConEspecialidad.length > 0) {
-            alert(`⚠️ No se puede eliminar la especialidad porque ${medicosConEspecialidad.length} médico(s) la usan.`);
+            toastSystem.showWarning(`⚠️ No se puede eliminar la especialidad porque ${medicosConEspecialidad.length} médico(s) la usan.`);
             return;
         }
         
@@ -446,7 +446,7 @@ function eliminarEspecialidad(id) {
         guardarEspecialidades(nuevasEspecialidades);
         cargarEspecialidades();
         cargarOpcionesEspecialidades(document.getElementById('especialidad'));
-        alert('✅ Especialidad eliminada correctamente.');
+        toastSystem.showSuccess('✅ Especialidad eliminada correctamente.');
     }
 }
 
@@ -484,12 +484,12 @@ function guardarObraSocial(e) {
     const descuento = descuentoInput.value.trim();
     
     if (!nombre) {
-        alert('⚠️ Por favor, ingresá el nombre de la obra social.');
+        toastSystem.showError('⚠️ Por favor, ingresá el nombre de la obra social.');
         return;
     }
     
     if (!validarDescuento(descuento)) {
-        alert('⚠️ El descuento debe ser un número entre 0 y 100.');
+        toastSystem.showError('⚠️ El descuento debe ser un número entre 0 y 100.');
         return;
     }
     
@@ -501,7 +501,7 @@ function guardarObraSocial(e) {
         if (index !== -1) {
             obrasSociales[index].nombre = nombre;
             obrasSociales[index].descuento = parseFloat(descuento);
-            alert('✅ Obra social actualizada correctamente.');
+            toastSystem.showSuccess('✅ Obra social actualizada correctamente.');
         }
         obraSocialEditando = null;
         document.querySelector('#formObraSocial button[type="submit"]').innerHTML = '<i class="bi bi-plus"></i> Agregar';
@@ -513,7 +513,7 @@ function guardarObraSocial(e) {
             nombre: nombre,
             descuento: parseFloat(descuento)
         });
-        alert(`✅ Obra social "${nombre}" agregada correctamente.`);
+        toastSystem.showSuccess(`✅ Obra social "${nombre}" agregada correctamente.`);
     }
     
     guardarObrasSociales(obrasSociales);
@@ -548,7 +548,7 @@ function eliminarObraSocial(id) {
         );
         
         if (medicosConObraSocial.length > 0) {
-            alert(`⚠️ No se puede eliminar la obra social porque ${medicosConObraSocial.length} médico(s) la aceptan.`);
+            toastSystem.showWarning(`⚠️ No se puede eliminar la obra social porque ${medicosConObraSocial.length} médico(s) la aceptan.`);
             return;
         }
         
@@ -556,7 +556,7 @@ function eliminarObraSocial(id) {
         guardarObrasSociales(nuevasObrasSociales);
         cargarObrasSocialesTabla();
         cargarObrasSociales(); // Actualizar el desplegable
-        alert('✅ Obra social eliminada correctamente.');
+        toastSystem.showSuccess('✅ Obra social eliminada correctamente.');
     }
 }
 
@@ -631,7 +631,7 @@ function guardarTurno(e) {
     const hora = document.getElementById("horaTurno").value;
     
     if (!medicoId || !fecha || !hora) {
-        alert('⚠️ Por favor, completá todos los campos.');
+        toastSystem.showError('⚠️ Por favor, completá todos los campos.');
         return;
     }
     
@@ -639,7 +639,7 @@ function guardarTurno(e) {
     const ahora = new Date();
     
     if (fechaHora <= ahora) {
-        alert('⚠️ La fecha y hora del turno deben ser futuras.');
+        toastSystem.showError('⚠️ La fecha y hora del turno deben ser futuras.');
         return;
     }
     
@@ -654,7 +654,7 @@ function guardarTurno(e) {
                 medicoId: parseInt(medicoId),
                 fechaHora: fechaHora.toISOString()
             };
-            alert('✅ Turno actualizado correctamente.');
+            toastSystem.showSuccess('✅ Turno actualizado correctamente.');
         }
         turnoEditando = null;
         document.querySelector('#formTurno button[type="submit"]').innerHTML = '<i class="bi bi-plus"></i> Crear Turno';
@@ -667,7 +667,7 @@ function guardarTurno(e) {
             fechaHora: fechaHora.toISOString(),
             disponible: true
         });
-        alert('✅ Turno creado correctamente.');
+        toastSystem.showSuccess('✅ Turno creado correctamente.');
     }
     
     guardarTurnos(turnos);
@@ -688,14 +688,14 @@ function eliminarTurno(id) {
         const turno = turnos.find(t => t.id === id);
         
         if (turno && !turno.disponible) {
-            alert('⚠️ No se puede eliminar un turno que ya está reservado.');
+            toastSystem.showError('⚠️ No se puede eliminar un turno que ya está reservado.');
             return;
         }
         
         const nuevosTurnos = turnos.filter(t => t.id !== id);
         guardarTurnos(nuevosTurnos);
         cargarTurnos();
-        alert('✅ Turno eliminado correctamente.');
+        toastSystem.showSuccess('✅ Turno eliminado correctamente.');
     }
 }
 
@@ -745,7 +745,8 @@ function verDetalleReserva(id) {
     const reserva = reservas.find(r => r.id === id);
     
     if (reserva) {
-        alert(`📋 Detalle de Reserva:\n\nPaciente: ${reserva.pacienteNombre}\nDocumento: ${reserva.pacienteDocumento}\nValor Total: $${reserva.valorTotal.toLocaleString('es-AR')}`);
+        // Cambiar alert por toast
+        toastSystem.showInfo(`📋 Paciente: ${reserva.pacienteNombre}\nDocumento: ${reserva.pacienteDocumento}\nValor: $${reserva.valorTotal.toLocaleString('es-AR')}`);
     }
 }
 
@@ -768,7 +769,7 @@ function cancelarReserva(id) {
             guardarReservas(nuevasReservas);
             cargarReservas();
             cargarTurnos();
-            alert('✅ Reserva cancelada correctamente.');
+            toastSystem.showSuccess('✅ Reserva cancelada correctamente.');
         }
     }
 }
@@ -889,12 +890,12 @@ function guardarMedico() {
     }
 
     if (!formularioValido) {
-        alert('⚠️ Por favor, corregí los errores en el formulario antes de continuar.');
+        toastSystem.showError('⚠️ Por favor, corregí los errores en el formulario antes de continuar.');
         return;
     }
 
     if (!nombre || !apellido || !especialidadId || !matricula || !valorConsulta || !descripcion) {
-        alert('⚠️ Por favor, completá todos los campos obligatorios.');
+        toastSystem.showError('⚠️ Por favor, completá todos los campos obligatorios.');
         return;
     }
 
@@ -912,7 +913,7 @@ function guardarMedico() {
                 imagen: imagenSeleccionada || medicos[index].imagen,
                 obrasSociales: obrasSocialesIds
             };
-            alert('✅ Médico actualizado correctamente.');
+            toastSystem.showSuccess('✅ Médico actualizado correctamente.');
         }
         medicoEditando = null;
         document.querySelector('#formMedico button[type="submit"]').innerHTML = '<i class="bi bi-plus"></i> Agregar';
@@ -930,7 +931,7 @@ function guardarMedico() {
             obrasSociales: obrasSocialesIds
         };
         medicos.push(medicoData);
-        alert(`✅ Médico agregado: ${nombre} ${apellido}`);
+        toastSystem.showSuccess(`✅ Médico agregado: ${nombre} ${apellido}`);
     }
 
     guardarMedicos(medicos);
@@ -975,7 +976,7 @@ function eliminarMedico(id) {
         guardarMedicos(medicos);
         notificarCambios();
         cargarMedicos();
-        alert('✅ Médico eliminado correctamente.');
+        toastSystem.showSuccess('✅ Médico eliminado correctamente.');
     }
 }
 
@@ -1177,11 +1178,11 @@ document.addEventListener("DOMContentLoaded", () => {
     if (btnGuardarImagen) {
         btnGuardarImagen.addEventListener('click', () => {
             if (imagenSeleccionada) {
-                alert('✅ Imagen del médico guardada correctamente.');
+                toastSystem.showSuccess('✅ Imagen del médico guardada correctamente.');
                 const modal = bootstrap.Modal.getInstance(document.getElementById('modalImagen'));
                 if (modal) modal.hide();
             } else {
-                alert('⚠️ Por favor, seleccioná una imagen antes de guardar.');
+                toastSystem.showError('⚠️ Por favor, seleccioná una imagen antes de guardar.');
             }
         });
     }
@@ -1199,7 +1200,6 @@ window.eliminarTurno = eliminarTurno;
 window.verDetalleReserva = verDetalleReserva;
 window.cancelarReserva = cancelarReserva;
 window.resetFormTurno = resetFormTurno;
-
 
 // Función de reseteo para debugging
 window.resetearDatos = function() {
@@ -1220,7 +1220,7 @@ window.resetearDatos = function() {
     cargarTurnos();
     cargarReservas();
     
-    
+    toastSystem.showInfo('✅ Datos reseteados correctamente');
     console.log('✅ Datos reseteados correctamente');
     console.log('Médicos actualizados:', medicos);
 };

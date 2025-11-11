@@ -1,5 +1,9 @@
 const loginForm = document.getElementById("loginForm");
 
+// Inicializar toasts
+const toastSuccess = new bootstrap.Toast(document.getElementById('toastSuccess'));
+const toastError = new bootstrap.Toast(document.getElementById('toastError'));
+
 loginForm.addEventListener("submit", function(e) {
     e.preventDefault();
     
@@ -8,9 +12,20 @@ loginForm.addEventListener("submit", function(e) {
 
     const user = usuarios.find(u => u.email === email);
 
-    if (!user) return alert("Usuario no encontrado");
-    if (!user.activo) return alert("Usuario desactivado");
-    if (user.clave !== clave) return alert("Contraseña incorrecta");
+    if (!user) {
+        showError("Usuario no encontrado");
+        return;
+    }
+    
+    if (!user.activo) {
+        showError("Usuario desactivado");
+        return;
+    }
+    
+    if (user.clave !== clave) {
+        showError("Contraseña incorrecta");
+        return;
+    }
 
     // ✅ Guardamos el usuario en localStorage
     localStorage.setItem("usuarioActivo", JSON.stringify({
@@ -20,13 +35,28 @@ loginForm.addEventListener("submit", function(e) {
         rol: user.rol
     }));
 
-    // Redirigir según el rol
+    // Mostrar toast de éxito
+    showSuccess(`¡Bienvenido ${user.nombre}!`);
     
-    switch (user.rol) {
-        case "admin":
-            window.location.href = "../views/admin.html";
-            break;
-        case "usuario":
-            window.location.href = "../views/turnos.html"; // En un futuro se cambiara por usuario.html, que habilitará el portal de paciente. Si no estas registrado, no podes reservar turnos. 
-    }
+    // Redirigir después de un breve delay para que se vea el toast
+    setTimeout(() => {
+        switch (user.rol) {
+            case "admin":
+                window.location.href = "../views/admin.html";
+                break;
+            case "usuario":
+                window.location.href = "../views/turnos.html";
+                break;
+        }
+    }, 1500);
 });
+
+function showError(mensaje) {
+    document.getElementById('toastErrorMessage').textContent = mensaje;
+    toastError.show();
+}
+
+function showSuccess(mensaje) {
+    document.getElementById('toastSuccessMessage').textContent = mensaje;
+    toastSuccess.show();
+}

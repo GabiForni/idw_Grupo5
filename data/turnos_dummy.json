@@ -1,0 +1,132 @@
+{
+  "especialidades": [
+    {
+      "nombre": "Dermatología",
+      "medicos": [
+        {
+          "nombre": "Carlos Rivas",
+          "precio": 13500,
+          "fechas_disponibles": [
+            {
+              "fecha": "2025-11-15",
+              "horarios": ["09:00", "09:30", "10:00", "11:00"]
+            },
+            {
+              "fecha": "2025-11-16",
+              "horarios": ["10:00", "10:30", "11:00", "11:30"]
+            }
+          ]
+        },
+        {
+          "nombre": "Laura Fernández",
+          "precio": 14000,
+          "fechas_disponibles": [
+            {
+              "fecha": "2025-11-17",
+              "horarios": ["08:30", "09:00", "09:30"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "nombre": "Cardiología",
+      "medicos": [
+        {
+          "nombre": "Ricardo Molina",
+          "precio": 15500,
+          "fechas_disponibles": [
+            {
+              "fecha": "2025-11-20",
+              "horarios": ["08:00", "08:30", "09:00"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "nombre": "Pediatría",
+      "medicos": [
+        {
+          "nombre": "Mariana Suárez",
+          "precio": 12000,
+          "fechas_disponibles": [
+            {
+              "fecha": "2025-11-18",
+              "horarios": ["09:00", "09:30", "10:00"]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "obras_sociales": [
+    "OSDE",
+    "Swiss Medical",
+    "Galeno",
+    "OSECAC",
+    "Particular"
+  ],
+  "turnos_confirmados": [
+    {
+      "doc_tipo": "DNI",
+      "doc_numero": "32018804",
+      "nombre_completo": "Fernando Rodríguez",
+      "fecha_nacimiento": "1986-03-10",
+      "obra_social": "OSDE",
+      "especialidad": "Dermatología",
+      "medico": "Carlos Rivas",
+      "fecha": "2025-11-15",
+      "hora": "09:30",
+      "precio": 13500
+    },
+    {
+      "doc_tipo": "DNI",
+      "doc_numero": "27340651",
+      "nombre_completo": "María López",
+      "fecha_nacimiento": "1992-07-22",
+      "obra_social": "Galeno",
+      "especialidad": "Cardiología",
+      "medico": "Ricardo Molina",
+      "fecha": "2025-11-20",
+      "hora": "08:00",
+      "precio": 15500
+    },
+    {
+      "doc_tipo": "DNI",
+      "doc_numero": "30581290",
+      "nombre_completo": "Javier Gómez",
+      "fecha_nacimiento": "1989-02-15",
+      "obra_social": "OSECAC",
+      "especialidad": "Dermatología",
+      "medico": "Laura Fernández",
+      "fecha": "2025-11-17",
+      "hora": "09:00",
+      "precio": 14000
+    },
+    {
+      "doc_tipo": "DNI",
+      "doc_numero": "28451763",
+      "nombre_completo": "Lucía Ramírez",
+      "fecha_nacimiento": "1995-09-10",
+      "obra_social": "Swiss Medical",
+      "especialidad": "Pediatría",
+      "medico": "Mariana Suárez",
+      "fecha": "2025-11-18",
+      "hora": "09:30",
+      "precio": 12000
+    },
+    {
+      "doc_tipo": "DNI",
+      "doc_numero": "31122345",
+      "nombre_completo": "Carlos Herrera",
+      "fecha_nacimiento": "1983-11-25",
+      "obra_social": "Particular",
+      "especialidad": "Dermatología",
+      "medico": "Carlos Rivas",
+      "fecha": "2025-11-16",
+      "hora": "11:00",
+      "precio": 13500
+    }
+  ]
+}

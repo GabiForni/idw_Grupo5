@@ -67,3 +67,14 @@ const medicosRegistrados = [
     }
 ];
 
+// Al agregar médico exitosamente:
+toastSystem.showSuccess('Médico agregado correctamente');
+
+// Al editar médico:
+toastSystem.showSuccess('Médico actualizado correctamente');
+
+// Al eliminar médico:
+toastSystem.showWarning('Médico eliminado del sistema');
+
+// Al error:
+toastSystem.showError('Error al procesar la solicitud');
