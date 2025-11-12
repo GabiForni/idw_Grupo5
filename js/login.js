@@ -1,62 +1,94 @@
-const loginForm = document.getElementById("loginForm");
+document.addEventListener("DOMContentLoaded", () => {
+  const formLogin = document.getElementById("loginForm");
+  const inputEmail = document.getElementById("email");
+  const inputClave = document.getElementById("clave");
 
-// Inicializar toasts
-const toastSuccess = new bootstrap.Toast(document.getElementById('toastSuccess'));
-const toastError = new bootstrap.Toast(document.getElementById('toastError'));
+  const toastSuccess = new bootstrap.Toast(document.getElementById("toastSuccess"));
+  const toastError = new bootstrap.Toast(document.getElementById("toastError"));
+  const msgSuccess = document.getElementById("toastSuccessMessage");
+  const msgError = document.getElementById("toastErrorMessage");
 
-loginForm.addEventListener("submit", function(e) {
+  formLogin.addEventListener("submit", async (e) => {
     e.preventDefault();
-    
-    const email = document.getElementById("email").value.trim();
-    const clave = document.getElementById("clave").value.trim();
 
-    const user = usuarios.find(u => u.email === email);
+    const emailOrUser = inputEmail.value.trim();
+    const password = inputClave.value.trim();
 
-    if (!user) {
-        showError("Usuario no encontrado");
-        return;
-    }
-    
-    if (!user.activo) {
-        showError("Usuario desactivado");
-        return;
-    }
-    
-    if (user.clave !== clave) {
-        showError("Contraseña incorrecta");
-        return;
+    if (!emailOrUser || !password) {
+      msgError.textContent = "⚠️ Por favor, ingresá tus credenciales.";
+      toastError.show();
+      return;
     }
 
-    // ✅ Guardamos el usuario en localStorage
-    localStorage.setItem("usuarioActivo", JSON.stringify({
-        id: user.id,
-        nombre: user.nombre,
-        email: user.email,
-        rol: user.rol
-    }));
+    try {
+      let username = emailOrUser;
 
-    // Mostrar toast de éxito
-    showSuccess(`¡Bienvenido ${user.nombre}!`);
-    
-    // Redirigir después de un breve delay para que se vea el toast
-    setTimeout(() => {
-        switch (user.rol) {
-            case "admin":
-                window.location.href = "../views/admin.html";
-                break;
-            case "usuario":
-                window.location.href = "../views/turnos.html";
-                break;
+      // 🔍 Si el usuario escribe un email, buscar su username real
+      if (emailOrUser.includes("@")) {
+        const resUsers = await fetch("https://dummyjson.com/users");
+        const dataUsers = await resUsers.json();
+        const user = dataUsers.users.find(
+          (u) => u.email.toLowerCase() === emailOrUser.toLowerCase()
+        );
+
+        if (!user) {
+          msgError.textContent = "❌ Usuario no encontrado.";
+          toastError.show();
+          return;
         }
-    }, 1500);
+
+        username = user.username;
+      }
+
+      // 🔐 Hacer login en DummyJSON
+      const resLogin = await fetch("https://dummyjson.com/auth/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username, password }),
+      });
+
+      if (!resLogin.ok) {
+        msgError.textContent = "❌ Credenciales incorrectas.";
+        toastError.show();
+        return;
+      }
+
+      const dataLogin = await resLogin.json();
+
+      // 🎯 Asignar rol manualmente
+      let rol = "usuario";
+      if (dataLogin.username === "emilys") {
+        rol = "admin";
+      }
+
+      // 💾 Guardar usuario en localStorage con el rol incluido
+      const usuarioActivo = {
+        id: dataLogin.id,
+        nombre: `${dataLogin.firstName} ${dataLogin.lastName}`,
+        email: dataLogin.email,
+        username: dataLogin.username,
+        rol: rol,
+        token: dataLogin.accessToken,
+        imagen: dataLogin.image,
+      };
+
+      localStorage.setItem("usuarioActivo", JSON.stringify(usuarioActivo));
+
+      msgSuccess.textContent = `✅ Bienvenido, ${usuarioActivo.nombre}`;
+      toastSuccess.show();
+
+      // ⏳ Redirigir según el rol
+      setTimeout(() => {
+        if (rol === "admin") {
+          window.location.href = "../views/admin.html";
+        } else {
+          window.location.href = "../views/turnos.html";
+        }
+      }, 1500);
+    } catch (error) {
+      console.error("Error al iniciar sesión:", error);
+      msgError.textContent = "⚠️ Error de conexión con el servidor.";
+      toastError.show();
+    }
+  });
 });
-
-function showError(mensaje) {
-    document.getElementById('toastErrorMessage').textContent = mensaje;
-    toastError.show();
-}
-
-function showSuccess(mensaje) {
-    document.getElementById('toastSuccessMessage').textContent = mensaje;
-    toastSuccess.show();
-}
