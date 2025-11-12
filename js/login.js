@@ -55,26 +55,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const dataLogin = await resLogin.json();
 
-      // 🎯 Asignar rol manualmente: "emilys" es el ADMIN
-      let rol = "usuario";
-      if (dataLogin.username === "emilys") {
-        rol = "admin";
-      }
+      // 🧭 Obtener datos completos del usuario (incluye el rol real)
+      const resUser = await fetch(`https://dummyjson.com/users/${dataLogin.id}`);
+      const userData = await resUser.json();
 
-      // 💾 Guardar usuario en sessionStorage (cumple los requerimientos)
+      // 🧩 Determinar el rol (prioriza userData.role o company.title)
+      const rol = userData.role?.toLowerCase() ||
+                  userData.company?.title?.toLowerCase() ||
+                  "usuario";
+
+      // 💾 Guardar usuario en sessionStorage (requerimiento)
       const usuarioActivo = {
-        id: dataLogin.id,
-        nombre: `${dataLogin.firstName} ${dataLogin.lastName}`,
-        email: dataLogin.email,
-        username: dataLogin.username,
+        id: userData.id,
+        nombre: `${userData.firstName} ${userData.lastName}`,
+        email: userData.email,
+        username: userData.username,
         rol: rol,
         token: dataLogin.accessToken,
-        imagen: dataLogin.image,
+        imagen: userData.image,
       };
 
       sessionStorage.setItem("usuarioActivo", JSON.stringify(usuarioActivo));
 
-      // (Opcional) Guardar en localStorage solo si "Recordarme" está marcado
+      // (Opcional) Guardar en localStorage si "Recordarme" está marcado
       const rememberMe = document.getElementById("rememberMe").checked;
       if (rememberMe) {
         localStorage.setItem("usuarioRecordado", JSON.stringify(usuarioActivo));
@@ -82,12 +85,13 @@ document.addEventListener("DOMContentLoaded", () => {
         localStorage.removeItem("usuarioRecordado");
       }
 
+      //  Mostrar mensaje de éxito
       msgSuccess.textContent = `✅ Bienvenido, ${usuarioActivo.nombre}`;
       toastSuccess.show();
 
-      // ⏳ Redirigir según el rol
+      //  Redirigir según el rol real del usuario
       setTimeout(() => {
-        if (rol === "admin") {
+        if (rol.includes("admin") || rol.includes("administrator")) {
           window.location.href = "../views/admin.html";
         } else {
           window.location.href = "../views/turnos.html";

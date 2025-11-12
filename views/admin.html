@@ -121,6 +121,11 @@
                     <i class="bi bi-calendar-check me-2"></i>Reservas
                 </button>
             </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="usuarios-tab" data-bs-toggle="tab" data-bs-target="#usuarios" type="button" role="tab">
+                    <i class="bi bi-people me-2"></i>Usuarios
+                </button>
+            </li>
         </ul>
 
         <!-- Contenido de las pestañas -->
@@ -356,6 +361,68 @@
                     </div>
                 </section>
             </div>
+            <!-- Pestaña Usuarios -->
+            <div class="tab-pane fade" id="usuarios" role="tabpanel">
+                <section class="card px-3 py-4 my-3 shadow-sm rounded-4">
+                    <h3 class="mb-3">Gestión de Usuarios</h3>
+                    
+                    <div class="alert alert-info">
+                        <i class="bi bi-info-circle me-2"></i>
+                        Los usuarios se cargan desde la API de DummyJSON. No se pueden modificar desde este panel.
+                    </div>
+
+                    <!-- Filtros y búsqueda -->
+                    <div class="row mb-4">
+                        <div class="col-12 col-md-6">
+                            <input type="text" id="buscarUsuario" class="form-control" placeholder="Buscar por nombre, email o username...">
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <select id="filtroGenero" class="form-control">
+                                <option value="">Todos los géneros</option>
+                                <option value="male">Masculino</option>
+                                <option value="female">Femenino</option>
+                            </select>
+                        </div>
+                        <div class="col-12 col-md-2">
+                            <button type="submit" class="btn btn-success rounded-pill px-3 py-2 w-100">
+                                <i class="bi bi-plus"></i> Actualizar
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Listado de usuarios -->
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Usuario</th>
+                                    <th>Nombre</th>
+                                    <th>Email</th>
+                                    <th>Teléfono</th>
+                                    <th>Género</th>
+                                    <th>Edad</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbodyUsuarios">
+                                <tr>
+                                    <td colspan="7" class="text-center text-muted">
+                                        <i class="bi bi-arrow-clockwise me-2"></i>
+                                        Cargando usuarios...
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Paginación -->
+                    <nav aria-label="Paginación de usuarios">
+                        <ul class="pagination justify-content-center" id="paginacionUsuarios">
+                            <!-- La paginación se generará con JavaScript -->
+                        </ul>
+                    </nav>
+                </section>
+            </div>
         </div>
     </main>
 

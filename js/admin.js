@@ -1031,7 +1031,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // 👤 Mostrar usuario activo
     const usuarioActivoLabel = document.getElementById("usuarioActivo");
     if (usuarioActivoLabel) {
-        usuarioActivoLabel.textContent = `Bienvenido, ${usuario.nombre}`;
+        usuarioActivoLabel.textContent = `Bienvenido, ${usuario.rol} - ${usuario.nombre}`;
     }
 
     // 🚪 Cerrar sesión
