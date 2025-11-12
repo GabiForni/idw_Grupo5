@@ -55,13 +55,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const dataLogin = await resLogin.json();
 
-      // 🎯 Asignar rol manualmente
+      // 🎯 Asignar rol manualmente: "emilys" es el ADMIN
       let rol = "usuario";
       if (dataLogin.username === "emilys") {
         rol = "admin";
       }
 
-      // 💾 Guardar usuario en localStorage con el rol incluido
+      // 💾 Guardar usuario en sessionStorage (cumple los requerimientos)
       const usuarioActivo = {
         id: dataLogin.id,
         nombre: `${dataLogin.firstName} ${dataLogin.lastName}`,
@@ -72,7 +72,15 @@ document.addEventListener("DOMContentLoaded", () => {
         imagen: dataLogin.image,
       };
 
-      localStorage.setItem("usuarioActivo", JSON.stringify(usuarioActivo));
+      sessionStorage.setItem("usuarioActivo", JSON.stringify(usuarioActivo));
+
+      // (Opcional) Guardar en localStorage solo si "Recordarme" está marcado
+      const rememberMe = document.getElementById("rememberMe").checked;
+      if (rememberMe) {
+        localStorage.setItem("usuarioRecordado", JSON.stringify(usuarioActivo));
+      } else {
+        localStorage.removeItem("usuarioRecordado");
+      }
 
       msgSuccess.textContent = `✅ Bienvenido, ${usuarioActivo.nombre}`;
       toastSuccess.show();
@@ -85,6 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
           window.location.href = "../views/turnos.html";
         }
       }, 1500);
+
     } catch (error) {
       console.error("Error al iniciar sesión:", error);
       msgError.textContent = "⚠️ Error de conexión con el servidor.";

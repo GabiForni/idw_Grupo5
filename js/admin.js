@@ -1009,31 +1009,46 @@ function resetForm() {
 
 // =============== INICIALIZACIÓN DE LA PÁGINA ===============
 
+// =============== INICIALIZACIÓN DE LA PÁGINA ===============
+
 document.addEventListener("DOMContentLoaded", () => {
-    // Verificar autenticación
-    const usuario = JSON.parse(localStorage.getItem("usuarioActivo"));
+    // 🔐 Recuperar sesión desde sessionStorage o localStorage (recordarme)
+    let usuario = JSON.parse(sessionStorage.getItem("usuarioActivo"));
+    if (!usuario) {
+        const recordado = localStorage.getItem("usuarioRecordado");
+        if (recordado) {
+            usuario = JSON.parse(recordado);
+            sessionStorage.setItem("usuarioActivo", recordado);
+        }
+    }
+
+    // 🚫 Si no hay usuario o no es admin → redirigir
     if (!usuario || usuario.rol !== "admin") {
-        window.location.href = "../login.html";
+        window.location.href = "../views/login.html";
         return;
     }
 
-    document.getElementById("usuarioActivo").textContent = `Bienvenido, ${usuario.nombre}`;
+    // 👤 Mostrar usuario activo
+    const usuarioActivoLabel = document.getElementById("usuarioActivo");
+    if (usuarioActivoLabel) {
+        usuarioActivoLabel.textContent = `Bienvenido, ${usuario.nombre}`;
+    }
 
-    // Cerrar sesión
+    // 🚪 Cerrar sesión
     const btnCerrarSesion = document.getElementById("btnCerrarSesion");
     if (btnCerrarSesion) {
         btnCerrarSesion.addEventListener("click", () => {
-            localStorage.removeItem("usuarioActivo");
+            sessionStorage.removeItem("usuarioActivo");
+            localStorage.removeItem("usuarioRecordado");
             window.location.href = "../views/login.html";
         });
     }
 
-    // Inicializar todos los datos
+    // =================== INICIALIZACIÓN ORIGINAL ===================
+    // No se toca nada de lo siguiente
     inicializarDatos();
-    
-    // Cargar médicos DESPUÉS de inicializar
     medicos = obtenerMedicos();
-    
+
     console.log('=== VERIFICACIÓN DE DATOS ===');
     console.log('Médicos:', medicos);
     console.log('Especialidades:', obtenerEspecialidades());
@@ -1066,29 +1081,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Formularios
     const formMedico = document.getElementById("formMedico");
-    if (formMedico) {
-        formMedico.addEventListener("submit", (e) => {
-            e.preventDefault();
-            guardarMedico();
-        });
-    }
+    if (formMedico) formMedico.addEventListener("submit", (e) => {
+        e.preventDefault();
+        guardarMedico();
+    });
 
     const formEspecialidad = document.getElementById("formEspecialidad");
-    if (formEspecialidad) {
-        formEspecialidad.addEventListener("submit", guardarEspecialidad);
-    }
+    if (formEspecialidad) formEspecialidad.addEventListener("submit", guardarEspecialidad);
 
     const formObraSocial = document.getElementById("formObraSocial");
-    if (formObraSocial) {
-        formObraSocial.addEventListener("submit", guardarObraSocial);
-    }
+    if (formObraSocial) formObraSocial.addEventListener("submit", guardarObraSocial);
 
     const formTurno = document.getElementById("formTurno");
-    if (formTurno) {
-        formTurno.addEventListener("submit", guardarTurno);
-    }
+    if (formTurno) formTurno.addEventListener("submit", guardarTurno);
 
-    // Validación en tiempo real (médicos)
+    // Validaciones en tiempo real (no se modifica)
     const nombreInput = document.getElementById("nombreMedico");
     const apellidoInput = document.getElementById("nombreApellido");
     const matriculaInput = document.getElementById("matriculaMedico");
@@ -1126,8 +1133,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 limpiarError('matriculaMedico');
             }
         });
-
-        // Prevenir entrada de caracteres no numéricos
         matriculaInput.addEventListener('input', () => {
             matriculaInput.value = matriculaInput.value.replace(/[^\d]/g, '');
         });
@@ -1155,10 +1160,9 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Img medico
+    // Img médico (sin cambios)
     const inputImagen = document.getElementById('imagenMedico');
     const preview = document.getElementById('previewImagen');
-
     if (inputImagen && preview) {
         inputImagen.addEventListener('change', () => {
             const file = inputImagen.files[0];
@@ -1188,18 +1192,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
-// Funciones globales
-window.editarMedico = editarMedico;
-window.eliminarMedico = eliminarMedico;
-window.editarEspecialidad = editarEspecialidad;
-window.eliminarEspecialidad = eliminarEspecialidad;
-window.editarObraSocial = editarObraSocial;
-window.eliminarObraSocial = eliminarObraSocial;
-window.editarTurno = editarTurno;
-window.eliminarTurno = eliminarTurno;
-window.verDetalleReserva = verDetalleReserva;
-window.cancelarReserva = cancelarReserva;
-window.resetFormTurno = resetFormTurno;
 
 // Función de reseteo para debugging
 window.resetearDatos = function() {
