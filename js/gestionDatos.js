@@ -1,4 +1,4 @@
-// gestionDatos.js - Solo funciones básicas de datos
+// Solo funciones básicas de datos para cargar los selects en el form de reservas de la pagina turnos.html
 
 // =============== ESPECIALIDADES ===============
 const obtenerEspecialidades = () => {
