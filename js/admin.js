@@ -741,9 +741,9 @@ function cargarReservas() {
                 <td class="d-none d-lg-table-cell">$${reserva.valorTotal.toLocaleString('es-AR')}</td>
                 <td>
                     <div class="d-flex gap-2">
-                        <button class="btn btn-primary btn-sm" onclick="verDetalleReserva(${reserva.id})" title="Modificar">
-                            <i class="bi bi-pencil"></i>
-                            <span class="text-white d-none d-xl-inline ms-1">Modificar</span>
+                        <button class="btn btn-primary btn-sm" onclick="verDetalleReserva(${reserva.id})" title="Ver">
+                            <i class="bi bi-search"></i>
+                            <span class="text-white d-none d-xl-inline ms-1">Ver</span>
                         </button>
                         <button class="btn btn-danger btn-sm" onclick="cancelarReserva(${reserva.id})" title="Eliminar">
                             <i class="bi bi-trash"></i>
