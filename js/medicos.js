@@ -38,7 +38,7 @@ const medicosRegistrados = [
         apellido: "Gómez",
         matricula: "9912", 
         especialidad: 4,
-        descripcion: "Especialización en nutrición clínica y deportiva. Planes alimentarios personalizados para diferentes objetivos de salud.",
+        descripcion: "Especialización en nutrición clínica y deportiva. Planes alimentarios personalizados para diferentes objetivos.",
         valorConsulta: 10000.00,
         imagen: "../img/persona-4.png",
         obrasSociales: [1, 6, 9]
@@ -60,7 +60,7 @@ const medicosRegistrados = [
         apellido: "Castro",
         matricula: "1109",
         especialidad: 6,
-        descripcion: "Kinesiólogo especializado en rehabilitación traumatológica, deportiva y neurológica. Tratamientos personalizados para recuperación funcional.",
+        descripcion: "Kinesiólogo especializado en rehabilitación traumatológica, deportiva y neurológica. Tratamientos personalizados.",
         valorConsulta: 8000.00,
         imagen: "../img/persona-6.png",
         obrasSociales: [2, 5, 6, 12]
