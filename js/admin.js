@@ -68,14 +68,14 @@ const guardarEspecialidades = (especialidades) => {
     localStorage.setItem('especialidades', JSON.stringify(especialidades));
 };
 
-// Función para obtener el nombre de una especialidad por ID
+// Obtener el nombre de una especialidad por ID
 function obtenerNombreEspecialidad(idEspecialidad) {
     const especialidades = obtenerEspecialidades();
     const especialidad = especialidades.find(esp => esp.id === idEspecialidad);
     return especialidad ? especialidad.nombre : "Especialidad no encontrada";
 }
 
-// Función para cargar opciones de especialidades en selects
+// Cargar opciones de especialidades en selects
 function cargarOpcionesEspecialidades(selectElement) {
     const especialidades = obtenerEspecialidades();
     selectElement.innerHTML = '<option value="">Seleccionar especialidad</option>';
@@ -108,7 +108,7 @@ const guardarObrasSociales = (obrasSociales) => {
     localStorage.setItem('obrasSociales', JSON.stringify(obrasSociales));
 };
 
-// Función para obtener el nombre de una obra social por ID
+// Obtener el nombre de una obra social por ID
 function obtenerNombreObraSocial(idObraSocial) {
     const obrasSociales = obtenerObrasSociales();
     
@@ -120,7 +120,7 @@ function obtenerNombreObraSocial(idObraSocial) {
     return obraSocial ? obraSocial.nombre : "Obra social no encontrada";
 }
 
-// Función para obtener el descuento de una obra social por ID
+// Obtener el descuento de una obra social por ID
 function obtenerDescuentoObraSocial(idObraSocial) {
     const obrasSociales = obtenerObrasSociales();
     const idBuscado = parseInt(idObraSocial);
@@ -134,7 +134,7 @@ function obtenerDescuentoObraSocial(idObraSocial) {
 // Inicializar Turnos
 const inicializarTurnos = () => {
     if (!localStorage.getItem('turnos')) {
-        localStorage.setItem('turnos', JSON.stringify(turnosIniciales)); // Usa tu array de turnos
+        localStorage.setItem('turnos', JSON.stringify(turnosIniciales));
     }
 };
 
@@ -219,7 +219,7 @@ function cargarObrasSociales() {
         listaObras.appendChild(item);
     });
     
-    // Evento para checkboxes
+    // Para checkboxes
     const checks = listaObras.querySelectorAll('input[type="checkbox"]');
     checks.forEach(check => {
         check.addEventListener('change', actualizarObrasSeleccionadas);
@@ -279,7 +279,7 @@ function notificarCambios() {
     window.dispatchEvent(event);
 }
 
-// Validaciones
+// Validaciones de campos
 function validarNombre(nombre) {
     const regex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\s]+$/;
     return regex.test(nombre) && nombre.length >= 2 && nombre.length <= 50;
@@ -339,7 +339,7 @@ function limpiarError(campo) {
     input.classList.remove('is-invalid');
 }
 
-// =============== FUNCIONALIDADES DE PESTAÑAS ===============
+// =============== FUNCIONALIDADES DE DESPLEGABLES (turnos, reservas, formulario) ===============
 
 // Cargar opciones de médicos en selects
 function cargarOpcionesMedicos(selectElement) {
@@ -367,13 +367,17 @@ function cargarEspecialidades() {
             <td>${especialidad.id}</td>
             <td>${especialidad.nombre}</td>
             <td>
-                <button class="btn btn-primary btn-sm me-2" onclick="editarEspecialidad(${especialidad.id})">
-                    <i class="bi bi-pencil-fill me-1"></i>Modificar
-                </button>
-                <button class="btn btn-danger btn-sm" onclick="eliminarEspecialidad(${especialidad.id})">
-                    <i class="bi bi-trash me-1"></i>Eliminar
-                </button>
-            </td>
+                <div class="d-flex gap-2">
+                    <button class="btn btn-primary btn-sm" onclick="editarEspecialidad(${especialidad.id})" title="Modificar">
+                        <i class="bi bi-pencil"></i>
+                        <span class="text-white d-none d-xl-inline ms-1">Modificar</span>
+                    </button>
+                    <button class="btn btn-danger btn-sm" onclick="eliminarEspecialidad(${especialidad.id})" title="Eliminar">
+                        <i class="bi bi-trash"></i>
+                        <span class="text-white d-none d-xl-inline ms-1">Eliminar</span>
+                    </button>
+                </div>
+            </td>   
         </tr>
     `).join('');
 }
@@ -464,12 +468,16 @@ function cargarObrasSocialesTabla() {
             <td>${obra.nombre}</td>
             <td>${obra.descuento || 0}%</td>
             <td>
-                <button class="btn btn-primary btn-sm me-2" onclick="editarObraSocial(${obra.id})">
-                    <i class="bi bi-pencil-fill me-1"></i>Modificar
-                </button>
-                <button class="btn btn-danger btn-sm" onclick="eliminarObraSocial(${obra.id})">
-                    <i class="bi bi-trash me-1"></i>Eliminar
-                </button>
+                <div class="d-flex gap-2">
+                    <button class="btn btn-primary btn-sm" onclick="editarObraSocial(${obra.id})" title="Modificar">
+                        <i class="bi bi-pencil"></i>
+                        <span class="text-white d-none d-xl-inline ms-1">Modificar</span>
+                    </button>
+                    <button class="btn btn-danger btn-sm" onclick="eliminarObraSocial(${obra.id})" title="Eliminar">
+                        <i class="bi bi-trash"></i>
+                        <span class="text-white d-none d-xl-inline ms-1">Eliminar</span>
+                    </button>
+                </div>
             </td>
         </tr>
     `).join('');
@@ -518,7 +526,7 @@ function guardarObraSocial(e) {
     
     guardarObrasSociales(obrasSociales);
     cargarObrasSocialesTabla();
-    cargarObrasSociales(); // Actualizar el desplegable
+    cargarObrasSociales(); 
     nombreInput.value = '';
     descuentoInput.value = '';
 }
@@ -579,19 +587,24 @@ function cargarTurnos() {
             <tr>
                 <td>${turno.id}</td>
                 <td>${medico ? `${medico.nombre} ${medico.apellido}` : 'Médico no encontrado'}</td>
-                <td>${fechaFormateada} ${horaFormateada}</td>
+                <td class="d-none d-lg-table-cell">${fechaFormateada} ${horaFormateada}</td>
                 <td>
                     <span class="text-white p-2 badge ${turno.disponible ? 'bg-success' : 'bg-danger'}">
                         ${turno.disponible ? 'Disponible' : 'Ocupado'}
                     </span>
                 </td>
+
                 <td>
-                    <button class="btn btn-primary btn-sm me-2" onclick="editarTurno(${turno.id})">
-                        <i class="bi bi-pencil-fill me-1"></i>Modificar
-                    </button>
-                    <button class="btn btn-danger btn-sm" onclick="eliminarTurno(${turno.id})">
-                        <i class="bi bi-trash me-1"></i>Eliminar
-                    </button>
+                    <div class="d-flex gap-2">
+                        <button class="btn btn-primary btn-sm" onclick="editarTurno(${turno.id})" title="Modificar">
+                            <i class="bi bi-pencil"></i>
+                            <span class="text-white d-none d-xl-inline ms-1">Modificar</span>
+                        </button>
+                        <button class="btn btn-danger btn-sm" onclick="eliminarTurno(${turno.id})" title="Eliminar">
+                            <i class="bi bi-trash"></i>
+                            <span class="text-white d-none d-xl-inline ms-1">Eliminar</span>
+                        </button>
+                    </div>
                 </td>
             </tr>
         `;
@@ -622,7 +635,6 @@ function editarTurno(id) {
     }
 }
 
-// Modificar la función guardarTurno para soportar edición
 function guardarTurno(e) {
     e.preventDefault();
     
@@ -675,7 +687,7 @@ function guardarTurno(e) {
     document.getElementById("formTurno").reset();
 }
 
-// Y agregá esta función para resetear el formulario de turnos
+// Resetear el formulario de turnos
 function resetFormTurno() {
     document.getElementById("formTurno").reset();
     turnoEditando = null;
@@ -723,17 +735,21 @@ function cargarReservas() {
                 <td>${reserva.id}</td>
                 <td>${reserva.pacienteNombre} (Doc: ${reserva.pacienteDocumento})</td>
                 <td>${medico ? `${medico.nombre} ${medico.apellido}` : 'Médico no encontrado'}</td>
-                <td>${especialidad ? especialidad.nombre : 'Especialidad no encontrada'}</td>
-                <td>${obraSocial ? obraSocial.nombre : 'Obra social no encontrada'}</td>
-                <td>${fechaFormateada} ${horaFormateada}</td>
-                <td>$${reserva.valorTotal.toLocaleString('es-AR')}</td>
+                <td class="d-none d-lg-table-cell">${especialidad ? especialidad.nombre : 'Especialidad no encontrada'}</td>
+                <td class="d-none d-lg-table-cell">${obraSocial ? obraSocial.nombre : 'Obra social no encontrada'}</td>
+                <td class="d-none d-lg-table-cell">${fechaFormateada} ${horaFormateada}</td>
+                <td class="d-none d-lg-table-cell">$${reserva.valorTotal.toLocaleString('es-AR')}</td>
                 <td>
-                    <button class="btn btn-info btn-sm me-2" onclick="verDetalleReserva(${reserva.id})">
-                        <i class="bi bi-eye me-1"></i>Ver
-                    </button>
-                    <button class="btn btn-danger btn-sm" onclick="cancelarReserva(${reserva.id})">
-                        <i class="bi bi-x-circle me-1"></i>Cancelar
-                    </button>
+                    <div class="d-flex gap-2">
+                        <button class="btn btn-primary btn-sm" onclick="verDetalleReserva(${reserva.id})" title="Modificar">
+                            <i class="bi bi-pencil"></i>
+                            <span class="text-white d-none d-xl-inline ms-1">Modificar</span>
+                        </button>
+                        <button class="btn btn-danger btn-sm" onclick="cancelarReserva(${reserva.id})" title="Eliminar">
+                            <i class="bi bi-trash"></i>
+                            <span class="text-white d-none d-xl-inline ms-1">Cancelar</span>
+                        </button>
+                    </div>
                 </td>
             </tr>
         `;
@@ -745,7 +761,6 @@ function verDetalleReserva(id) {
     const reserva = reservas.find(r => r.id === id);
     
     if (reserva) {
-        // Cambiar alert por toast
         toastSystem.showInfo(`📋 Paciente: ${reserva.pacienteNombre}\nDocumento: ${reserva.pacienteDocumento}\nValor: $${reserva.valorTotal.toLocaleString('es-AR')}`);
     }
 }
@@ -774,7 +789,7 @@ function cancelarReserva(id) {
     }
 }
 
-// =============== MÉDICOS (funciones existentes) ===============
+// =============== GESTIÓN MÉDICOS ===============
 
 function cargarMedicos() {
     const tbodyMedicos = document.getElementById("tbodyMedicos");
@@ -789,7 +804,7 @@ function cargarMedicos() {
             const nombresObras = medico.obrasSociales
                 .map(id => {
                     const obra = obtenerObrasSociales().find(os => os.id === id);
-                    return obra ? obra.nombre : null; // Solo el nombre, sin descuento
+                    return obra ? obra.nombre : null;
                 })
                 .filter(nombre => nombre !== null);
             
@@ -800,26 +815,28 @@ function cargarMedicos() {
         
         return `
             <tr>
-                <td>${medico.id}</td> <!-- Nueva columna ID -->
+                <td>${medico.id}</td>
                 <td>
                     <div class="d-flex align-items-center">
-                        <img src="${medico.imagen || '../img/doctor-default.png'}" alt="${medico.nombre}" 
-                             class="rounded-circle me-3" 
-                             style="width: 40px; height: 40px; object-fit: cover;">
+                        <img src="${medico.imagen || '../img/doctor-default.png'}" alt="${medico.nombre}" class="rounded-circle me-3" style="width: 40px; height: 40px; object-fit: cover;">
                         <span>${medico.nombre} ${medico.apellido}</span>
                     </div>
                 </td>
-                <td>${obtenerNombreEspecialidad(medico.especialidad)}</td>
-                <td>${medico.matricula}</td>
-                <td>$${medico.valorConsulta ? medico.valorConsulta.toLocaleString('es-AR') : '0'}</td>
-                <td>${obrasSocialesTexto}</td>
+                <td class="d-none d-md-table-cell">${obtenerNombreEspecialidad(medico.especialidad)}</td>
+                <td class="d-none d-md-table-cell">${medico.matricula}</td>
+                <td class="d-none d-md-table-cell">$${medico.valorConsulta ? medico.valorConsulta.toLocaleString('es-AR') : '0'}</td>
+                <td class="d-none d-md-table-cell">${obrasSocialesTexto}</td>
                 <td>
-                    <button class="btn btn-primary btn-sm me-2" onclick="editarMedico(${medico.id})">
-                        <i class="bi bi-pencil-fill me-1"></i>Modificar
-                    </button>
-                    <button class="btn btn-danger btn-sm" onclick="eliminarMedico(${medico.id})">
-                        <i class="bi bi-trash me-1"></i>Eliminar
-                    </button>
+                    <div class="d-flex gap-2">
+                        <button class="btn btn-primary btn-sm" onclick="editarMedico(${medico.id})" title="Modificar">
+                            <i class="bi bi-pencil"></i>
+                            <span class="text-white d-none d-xl-inline ms-1">Modificar</span>
+                        </button>
+                        <button class="btn btn-danger btn-sm" onclick="eliminarMedico(${medico.id})" title="Eliminar">
+                            <i class="bi bi-trash"></i>
+                            <span class="text-white d-none d-xl-inline ms-1">Eliminar</span>
+                        </button>
+                    </div>
                 </td>
             </tr>
         `;
@@ -835,7 +852,7 @@ function guardarMedico() {
     const valorConsulta = document.getElementById("valorConsulta").value.trim();
     const descripcion = document.getElementById("descripcionMedico").value.trim();
     
-    // Obtener obras sociales seleccionadas del nuevo desplegable
+    // Obtener obras sociales seleccionadas del desplegable
     const obrasSocialesIds = getObrasSeleccionadas();
 
     // Validaciones de formulario
@@ -951,7 +968,7 @@ function editarMedico(id) {
         document.getElementById("valorConsulta").value = medico.valorConsulta || '';
         document.getElementById("descripcionMedico").value = medico.descripcion || '';
         
-        // Preseleccionar obras sociales en el nuevo desplegable
+        // Preseleccionar obras sociales en el desplegable
         setObrasSeleccionadas(medico.obrasSociales || []);
         
         // Limpiar errores al editar
@@ -1009,8 +1026,6 @@ function resetForm() {
 
 // =============== INICIALIZACIÓN DE LA PÁGINA ===============
 
-// =============== INICIALIZACIÓN DE LA PÁGINA ===============
-
 document.addEventListener("DOMContentLoaded", () => {
     // 🔐 Recuperar sesión desde sessionStorage o localStorage (recordarme)
     let usuario = JSON.parse(sessionStorage.getItem("usuarioActivo"));
@@ -1044,8 +1059,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // =================== INICIALIZACIÓN ORIGINAL ===================
-    // No se toca nada de lo siguiente
+    // =================== INICIALIZACIÓN DATOS ===================
     inicializarDatos();
     medicos = obtenerMedicos();
 
@@ -1160,7 +1174,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Img médico (sin cambios)
+    // Img médico
     const inputImagen = document.getElementById('imagenMedico');
     const preview = document.getElementById('previewImagen');
     if (inputImagen && preview) {
