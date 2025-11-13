@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       //  Mostrar mensaje de éxito
-      msgSuccess.textContent = `Bienvenido, ${usuarioActivo.nombre}`;
+      msgSuccess.textContent = `✅ Bienvenido, ${usuarioActivo.nombre}`;
       toastSuccess.show();
 
       //  Redirigir según el rol real del usuario
