@@ -70,7 +70,7 @@
 
             <div class="col-12 col-md-8 col-lg-6 mx-auto">
                 <form class="p-4 bg-white rounded-4 shadow-lg" id="formTurnoPaciente" name="turno">
-                    <!-- Fila 1: Especialidad y Médico -->
+                    <!-- Especialidad y Médico -->
                     <div class="row g-3 mb-4">
                         <div class="col-md-6">
                             <label for="especialidad" class="form-label fw-semibold text-secondary">Especialidad:</label>
@@ -86,7 +86,7 @@
                         </div>
                     </div>
 
-                    <!-- Info del Médico (SOLO VALOR) -->
+                    <!-- Valor de la consulta que se muestra al seleccionar medico -->
                     <div class="mb-4" id="infoMedicoContainer" style="display: none;">
                         <div class="d-flex align-items-center gap-3 p-3 bg-light rounded-3">
                             <div class="flex-grow-1">
@@ -98,7 +98,7 @@
                         </div>
                     </div>
 
-                    <!-- Fila 2: Fecha y Horario -->
+                    <!-- Fecha y Horario -->
                     <div class="row g-3 mb-4">
                         <div class="col-md-6">
                             <label for="fechaDisponible" class="form-label fw-semibold text-secondary">Fecha disponible:</label>
@@ -117,9 +117,9 @@
                     </div>
 
                     <h3 class="mt-5">Datos personales</h3>
-                    <!-- Fila 3: Documento compacto -->
+                    <!-- Select de tipo de documento + campo para rellenar nro -->
                     <div class="row g-3 my-3">
-                        <div class="col-2">
+                        <div class="col-4 col-md-2">
                             <label class="form-label fw-semibold text-secondary">Doc:</label>
                             <select class="form-select custom-input" id="tipoDocumento" required>
                                 <option value="DNI">DNI</option>
@@ -127,17 +127,17 @@
                                 <option value="LC">LC</option>
                             </select>
                         </div>
-                        <div class="col-4">
+                        <div class="col-8 col-md-4">
                             <label class="form-label fw-semibold text-secondary">&nbsp;</label>
                             <input type="text" id="documento" class="form-control custom-input" placeholder="Número" required>
                         </div>
-                        <div class="col-6">
+                        <div class="col-md-6">
                             <label class="form-label fw-semibold text-secondary">Nombre completo:</label>
                             <input type="text" id="nombreCompleto" class="form-control custom-input" placeholder="Apellido y Nombre" required>
                         </div>
                     </div>
 
-                    <!-- Fila 4: Fecha Nacimiento y Obra Social -->
+                    <!-- Fecha Nacimiento y Obra Social -->
                     <div class="row g-3 mb-4">
                         <div class="col-md-6">
                             <label for="fechaNacimiento" class="form-label fw-semibold text-secondary">Fecha de nacimiento:</label>
@@ -152,7 +152,7 @@
                         </div>
                     </div>
 
-                    <!-- Resumen Final (oculto inicialmente) -->
+                    <!-- Resumen Final (se muestra al completar todos los campos-->
                     <div class="mb-4" id="resumenFinal" style="display: none;">
                         <div class="alert resumen-cartel rounded-4">
                             <h5 class="alert-heading">Resumen de tu turno:</h6>
@@ -197,10 +197,11 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Botón Confirmar -->
+                    
                     <button type="submit" class="btn btn-secondary btn-lg rounded-pill p-2 my-3 w-100" disabled id="btnConfirmar">
                         Confirmar cita
                     </button>
+                    
                 </form>
             </div>
         </div>
