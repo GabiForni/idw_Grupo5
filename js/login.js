@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
     try {
       let username = emailOrUser;
 
-      // 🔍 Si el usuario escribe un email, buscar su username real
+      // Si el usuario escribe un email, buscar su usuario
       if (emailOrUser.includes("@")) {
         const resUsers = await fetch("https://dummyjson.com/users");
         const dataUsers = await resUsers.json();
@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
         username = user.username;
       }
 
-      // 🔐 Hacer login en DummyJSON
+      // Hacer login en DummyJSON
       const resLogin = await fetch("https://dummyjson.com/auth/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -55,16 +55,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const dataLogin = await resLogin.json();
 
-      // 🧭 Obtener datos completos del usuario (incluye el rol real)
+      // Obtener datos completos del usuario
       const resUser = await fetch(`https://dummyjson.com/users/${dataLogin.id}`);
       const userData = await resUser.json();
 
-      // 🧩 Determinar el rol (prioriza userData.role o company.title)
+      // Determinar el rol
       const rol = userData.role?.toLowerCase() ||
                   userData.company?.title?.toLowerCase() ||
                   "usuario";
 
-      // 💾 Guardar usuario en sessionStorage (requerimiento)
+      // Guardar usuario en sessionStorage
       const usuarioActivo = {
         id: userData.id,
         nombre: `${userData.firstName} ${userData.lastName}`,
@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       sessionStorage.setItem("usuarioActivo", JSON.stringify(usuarioActivo));
 
-      // (Opcional) Guardar en localStorage si "Recordarme" está marcado
+      // Guardar en localStorage si "recordarme" está marcado
       const rememberMe = document.getElementById("rememberMe").checked;
       if (rememberMe) {
         localStorage.setItem("usuarioRecordado", JSON.stringify(usuarioActivo));
@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       //  Mostrar mensaje de éxito
-      msgSuccess.textContent = `✅ Bienvenido, ${usuarioActivo.nombre}`;
+      msgSuccess.textContent = `Bienvenido, ${usuarioActivo.nombre}`;
       toastSuccess.show();
 
       //  Redirigir según el rol real del usuario
