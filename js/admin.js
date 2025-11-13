@@ -1,7 +1,5 @@
 // =============== INICIALIZACIÓN Y DATOS ===============
 
-// Pendiente aplicar img con base64
-
 // Inicializar datos
 const inicializarDatos = () => {
     inicializarEspecialidades();
