@@ -1,10 +1,9 @@
-// reservas.js - Sistema de reserva de turnos para pacientes (versión corregida)
+// reservas.js - Sistema de reserva de turnos para pacientes
 document.addEventListener("DOMContentLoaded", function() {
     inicializarFormularioReserva();
 });
 
 function inicializarFormularioReserva() {
-    // Configurar fecha mínima (hoy) para fecha de nacimiento
     const hoy = new Date().toISOString().split('T')[0];
     document.getElementById('fechaNacimiento').max = hoy;
 
@@ -22,7 +21,7 @@ function inicializarFormularioReserva() {
     document.getElementById('horarioDisponible').addEventListener('change', actualizarResumenFinal);
     document.getElementById('obraSocial').addEventListener('change', actualizarResumenFinal);
     
-    // Event listeners para datos personales (actualizan resumen)
+    // Actualizar resumen
     document.getElementById('nombreCompleto').addEventListener('input', actualizarResumenFinal);
     document.getElementById('documento').addEventListener('input', actualizarResumenFinal);
     
@@ -98,7 +97,6 @@ function mostrarInfoMedico() {
     const medico = medicos.find(m => m.id === medicoId);
     
     if (medico) {
-        // SOLO mostrar el valor de la consulta como solicitaste
         document.getElementById('medicoValor').textContent = medico.valorConsulta?.toLocaleString('es-AR') || '0';
         container.style.display = 'block';
     }
@@ -120,7 +118,6 @@ function cargarFechasDisponibles() {
 
     const turnos = obtenerTurnos();
     
-    // Obtener TODAS las fechas únicas disponibles para este médico
     const fechasUnicas = [...new Set(
         turnos
             .filter(turno => turno.disponible && turno.medicoId === medicoId)
@@ -220,7 +217,6 @@ function actualizarResumenFinal() {
     const resumen = document.getElementById('resumenFinal');
     const btnConfirmar = document.getElementById('btnConfirmar');
     
-    // Verificar si tenemos todos los datos necesarios
     const medicoId = parseInt(document.getElementById('medico').value);
     const fechaSeleccionada = document.getElementById('fechaDisponible').value;
     const horarioSeleccionado = document.getElementById('horarioDisponible').value;
@@ -429,7 +425,6 @@ function mostrarResumenReserva(turnoId) {
             </div>
         `;
         
-        // Ocultar después de 10 segundos
         setTimeout(() => {
             resumenElement.style.display = 'none';
         }, 10000);
