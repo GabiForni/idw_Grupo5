@@ -1,4 +1,4 @@
-// reservas.js - Sistema de reserva de turnos para pacientes
+Sistema de reserva de turnos para pacientes
 document.addEventListener("DOMContentLoaded", function() {
     inicializarFormularioReserva();
 });
@@ -122,7 +122,6 @@ function cargarFechasDisponibles() {
         turnos
             .filter(turno => turno.disponible && turno.medicoId === medicoId)
             .map(turno => {
-                // Manejar tanto fechaHora como fecha directamente
                 if (turno.fechaHora) {
                     return new Date(turno.fechaHora).toISOString().split('T')[0];
                 } else if (turno.fecha) {
