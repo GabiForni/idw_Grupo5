@@ -110,6 +110,7 @@ const guardarObrasSociales = (obrasSociales) => {
 function obtenerNombreObraSocial(idObraSocial) {
     const obrasSociales = obtenerObrasSociales();
     
+    // Convertir a número por si viene como string desde localStorage
     const idBuscado = parseInt(idObraSocial);
     
     const obraSocial = obrasSociales.find(os => os.id === idBuscado);
@@ -181,6 +182,7 @@ function initObrasSociales() {
     // Cargar opciones
     cargarObrasSociales();
     
+    // Cerrar al hacer clic fuera
     document.addEventListener('click', (e) => {
         if (!inputObras.contains(e.target) && 
             !flechaObras.contains(e.target) && 
@@ -737,9 +739,9 @@ function cargarReservas() {
                 <td class="d-none d-lg-table-cell">$${reserva.valorTotal.toLocaleString('es-AR')}</td>
                 <td>
                     <div class="d-flex gap-2">
-                        <button class="btn btn-primary btn-sm" onclick="verDetalleReserva(${reserva.id})" title="Modificar">
-                            <i class="bi bi-pencil"></i>
-                            <span class="text-white d-none d-xl-inline ms-1">Modificar</span>
+                        <button class="btn btn-primary btn-sm" onclick="verDetalleReserva(${reserva.id})" title="Ver">
+                            <i class="bi bi-search"></i>
+                            <span class="text-white d-none d-xl-inline ms-1">Ver</span>
                         </button>
                         <button class="btn btn-danger btn-sm" onclick="cancelarReserva(${reserva.id})" title="Eliminar">
                             <i class="bi bi-trash"></i>
@@ -1023,7 +1025,7 @@ function resetForm() {
 // =============== INICIALIZACIÓN DE LA PÁGINA ===============
 
 document.addEventListener("DOMContentLoaded", () => {
-    //  Recuperar sesión desde sessionStorage o localStorage (recordarme)
+    // 🔐 Recuperar sesión desde sessionStorage o localStorage (recordarme)
     let usuario = JSON.parse(sessionStorage.getItem("usuarioActivo"));
     if (!usuario) {
         const recordado = localStorage.getItem("usuarioRecordado");
@@ -1033,19 +1035,19 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // Si no hay usuario o no es admin → redirigir
+    // 🚫 Si no hay usuario o no es admin → redirigir
     if (!usuario || usuario.rol !== "admin") {
         window.location.href = "../views/login.html";
         return;
     }
 
-    // 👤Mostrar usuario activo
+    // 👤 Mostrar usuario activo
     const usuarioActivoLabel = document.getElementById("usuarioActivo");
     if (usuarioActivoLabel) {
         usuarioActivoLabel.textContent = `Bienvenido, ${usuario.rol} - ${usuario.nombre}`;
     }
 
-    // Cerrar sesión
+    // 🚪 Cerrar sesión
     const btnCerrarSesion = document.getElementById("btnCerrarSesion");
     if (btnCerrarSesion) {
         btnCerrarSesion.addEventListener("click", () => {
