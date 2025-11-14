@@ -1,4 +1,3 @@
-Sistema de reserva de turnos para pacientes
 document.addEventListener("DOMContentLoaded", function() {
     inicializarFormularioReserva();
 });
@@ -21,7 +20,6 @@ function inicializarFormularioReserva() {
     document.getElementById('horarioDisponible').addEventListener('change', actualizarResumenFinal);
     document.getElementById('obraSocial').addEventListener('change', actualizarResumenFinal);
     
-    // Actualizar resumen
     document.getElementById('nombreCompleto').addEventListener('input', actualizarResumenFinal);
     document.getElementById('documento').addEventListener('input', actualizarResumenFinal);
     
@@ -118,6 +116,7 @@ function cargarFechasDisponibles() {
 
     const turnos = obtenerTurnos();
     
+    // Obtener TODAS las fechas únicas disponibles para este médico
     const fechasUnicas = [...new Set(
         turnos
             .filter(turno => turno.disponible && turno.medicoId === medicoId)
