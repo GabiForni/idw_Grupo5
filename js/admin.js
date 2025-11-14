@@ -1,7 +1,5 @@
 // =============== INICIALIZACIÓN Y DATOS ===============
 
-// Pendiente aplicar img con base64
-
 // Inicializar datos
 const inicializarDatos = () => {
     inicializarEspecialidades();
@@ -112,7 +110,6 @@ const guardarObrasSociales = (obrasSociales) => {
 function obtenerNombreObraSocial(idObraSocial) {
     const obrasSociales = obtenerObrasSociales();
     
-    // Convertir a número por si viene como string desde localStorage
     const idBuscado = parseInt(idObraSocial);
     
     const obraSocial = obrasSociales.find(os => os.id === idBuscado);
@@ -184,7 +181,6 @@ function initObrasSociales() {
     // Cargar opciones
     cargarObrasSociales();
     
-    // Cerrar al hacer clic fuera
     document.addEventListener('click', (e) => {
         if (!inputObras.contains(e.target) && 
             !flechaObras.contains(e.target) && 
@@ -1027,7 +1023,7 @@ function resetForm() {
 // =============== INICIALIZACIÓN DE LA PÁGINA ===============
 
 document.addEventListener("DOMContentLoaded", () => {
-    // 🔐 Recuperar sesión desde sessionStorage o localStorage (recordarme)
+    //  Recuperar sesión desde sessionStorage o localStorage (recordarme)
     let usuario = JSON.parse(sessionStorage.getItem("usuarioActivo"));
     if (!usuario) {
         const recordado = localStorage.getItem("usuarioRecordado");
@@ -1037,19 +1033,19 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // 🚫 Si no hay usuario o no es admin → redirigir
+    // Si no hay usuario o no es admin → redirigir
     if (!usuario || usuario.rol !== "admin") {
         window.location.href = "../views/login.html";
         return;
     }
 
-    // 👤 Mostrar usuario activo
+    // 👤Mostrar usuario activo
     const usuarioActivoLabel = document.getElementById("usuarioActivo");
     if (usuarioActivoLabel) {
         usuarioActivoLabel.textContent = `Bienvenido, ${usuario.rol} - ${usuario.nombre}`;
     }
 
-    // 🚪 Cerrar sesión
+    // Cerrar sesión
     const btnCerrarSesion = document.getElementById("btnCerrarSesion");
     if (btnCerrarSesion) {
         btnCerrarSesion.addEventListener("click", () => {
